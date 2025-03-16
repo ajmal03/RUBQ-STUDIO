@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tricks We Used | Concept Slider</title>
+  <style>
+  
+    
+  .concept {
+      background-color: #f8f8f8;
+      background-image: linear-gradient(#f0f0f0 1px, transparent 1px),
+                        linear-gradient(90deg, #f0f0f0 1px, transparent 1px);
+      background-size: 20px 20px;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+    }
+    
+    .container2 {
+      display: flex;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      height: 100vh;
+    }
+    
+    .logo-section2 {
+      width: 40%;
+      padding: 60px 20px;
+      display: flex;
+      align-items: flex-start;
+    }
+    
+    .logo {
+      position: sticky;
+      top: 60px;
+    }
+    
+    .tricks {
+      font-size: 4rem;
+      font-weight: 900;
+      line-height: 0.9;
+      color: #000;
+    }
+    
+    .we-used {
+      font-size: 4rem;
+      font-weight: 900;
+      line-height: 0.9;
+      color: #000;
+    }
+    
+    .we-do {
+      background-color: #000;
+      color: #a4ff54;
+      font-weight: 900;
+      padding: 5px 10px;
+      font-size: 1.5rem;
+      margin-left: 10px;
+      transform: translateY(-15px);
+      display: inline-block;
+    }
+    
+    .content-section {
+      width: 60%;
+      position: relative;
+      padding: 0 40px;
+    }
+    
+    .arrow2 {
+      height: 120px;
+      width: 2px;
+     
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    
+   
+    
+    .slider-container {
+      height: 100vh;
+      overflow-y: auto;
+      scroll-snap-type: y mandatory;
+      position: relative;
+    }
+    
+    .slider-container::-webkit-scrollbar {
+      width: 6px;
+    }
+    
+    /* .slider-container::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 10px;
+    } */
+    
+    /* .slider-container::-webkit-scrollbar-thumb {
+      background: #4a90e2;
+      border-radius: 10px;
+    } */
+    
+    .slide {
+      height: 50vh;
+      scroll-snap-align: start;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      padding: 40px 20px;
+    }
+    
+    .slide::before,
+    .slide::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 50px;
+      z-index: 2;
+      pointer-events: none;
+    }
+    
+    .slide::before {
+      top: 0;
+      background: linear-gradient(to bottom, rgba(248, 248, 248, 1) 0%, rgba(248, 248, 248, 0) 100%);
+    }
+    
+    .slide::after {
+      bottom: 0;
+      background: linear-gradient(to top, rgba(248, 248, 248, 1) 0%, rgba(248, 248, 248, 0) 100%);
+    }
+    
+    .section-number {
+      color: #4a90e2;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    
+    .section-title {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 30px;
+      color: #333;
+    }
+    
+    .section-text {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #777;
+      max-width: 500px;
+    }
+    
+    .slide:nth-child(2) .section-title {
+      color: #999;
+    }
+    
+    .slide:nth-child(2) .section-text {
+      color: #aaa;
+    }
+  </style>
+</head>
+<section class="concept">
+  <div class="container2">
+    <div class="logo-section2">
+      <div class="logo">
+        <div class="tricks">Tricks</div>
+        <div class="we-used">We Used<span class="we-do">WE<br>DO</span></div>
+      </div>
+    </div>
+    
+    <div class="content-section">
+    <div class="arrow2">
+      <img src="assets/images/Group 1410136454 (2).png" alt="Arrow Image">
+    </div>
+      
+      <div class="slider-container">
+        <div class="slide">
+          <div class="section-number">01</div>
+          <h2 class="section-title">CONCEPT</h2>
+          <p class="section-text">THIS IS WHERE THE SPARKS FLY. OUR TEAM CRAFTS BOLD, ORIGINAL IDEAS TO BRING YOUR BRAND TO LIFE.</p>
+        </div>
+        
+        <div class="slide">
+          <div class="section-number">01</div>
+          <h2 class="section-title">CONCEPT</h2>
+          <p class="section-text">THIS IS WHERE THE SPARKS FLY. OUR TEAM CRAFTS BOLD, ORIGINAL IDEAS TO BRING YOUR BRAND TO LIFE.</p>
+        </div>
+        
+        <div class="slide">
+          <div class="section-number">02</div>
+          <h2 class="section-title">DESIGN</h2>
+          <p class="section-text">WITH THE CONCEPT AS OUR FOUNDATION, WE CRAFT VISUALLY STRIKING DESIGNS THAT COMMUNICATE YOUR MESSAGE EFFECTIVELY.</p>
+        </div>
+        
+        <div class="slide">
+          <div class="section-number">03</div>
+          <h2 class="section-title">DEVELOP</h2>
+          <p class="section-text">OUR TECHNICAL EXPERTS BRING THE DESIGNS TO LIFE WITH CLEAN CODE AND FLAWLESS EXECUTION.</p>
+        </div>
+        
+        <div class="slide">
+          <div class="section-number">04</div>
+          <h2 class="section-title">DELIVER</h2>
+          <p class="section-text">WE LAUNCH YOUR PROJECT WITH PRECISION, ENSURING EVERYTHING WORKS PERFECTLY ACROSS ALL PLATFORMS.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</html>

@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iconic Branding - Design Styles</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            overflow-x: hidden;
+            cursor: default;
+        }
+        
+        .container {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        
+        /* Neo-Brutalism Elements */
+        .neo-brutalism {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-text {
+            position: absolute;
+            top: 60%;
+            left: 5%;
+            width: 40%;
+            transform: translateY(-50%);
+        }
+        
+        .hero-text h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            letter-spacing: -1px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+        
+        .hero-text p {
+            font-size: 1rem;
+            line-height: 1.5;
+            text-transform: uppercase;
+            max-width: 90%;
+        }
+        
+        /* Glassmorphism Elements */
+        .design-styles {
+            position: absolute;
+            bottom: 5%;
+            right: 5%;
+            width: 40%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .design-styles h2 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+        
+        .design-styles ol {
+            padding-left: 1.5rem;
+        }
+        
+        .design-styles li {
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .design-styles em {
+            font-style: italic;
+            color: #f0f0f0;
+        }
+        
+        /* Animation Styles */
+        .animation-styles {
+            position: absolute;
+            top: 10%;
+            right: 5%;
+            width: 40%;
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            padding: 1.5rem;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .animation-styles h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+        
+        .animation-styles ol {
+            padding-left: 1.5rem;
+        }
+        
+        .animation-styles li {
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .animation-styles em {
+            font-style: italic;
+            color: #f0f0f0;
+        }
+        
+        /* Minimal Futurism Elements */
+        .tagline {
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            width: 100%;
+            opacity: 0;
+        }
+        
+        .tagline h2 {
+            font-size: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+            color: #fff;
+        }
+        
+        /* Swiss Design Elements */
+        .grid-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: repeat(12, 1fr);
+            opacity: 0.15;
+            pointer-events: none;
+        }
+        
+        .grid-line {
+            border: 0.5px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Image Layouts */
+        .main-image {
+            position: absolute;
+            top: 10%;
+            left: 5%;
+            width: 35%;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            overflow: hidden;
+            transform: translateY(30px);
+            opacity: 0;
+        }
+        
+        .main-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .thumbnail-1 {
+            position: absolute;
+            top: 60%;
+            right: 30%;
+            width: 20%;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            overflow: hidden;
+            transform: translateY(30px);
+            opacity: 0;
+        }
+        
+        .thumbnail-2 {
+            position: absolute;
+            top: 30%;
+            right: 10%;
+            width: 25%;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            overflow: hidden;
+            transform: translateY(30px);
+            opacity: 0;
+        }
+        
+        .thumbnail-3 {
+            position: absolute;
+            bottom: 15%;
+            left: 40%;
+            width: 15%;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            overflow: hidden;
+            transform: translateY(30px);
+            opacity: 0;
+        }
+        
+        .thumbnail-1 img, .thumbnail-2 img, .thumbnail-3 img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        /* Hover effects */
+        .main-image:hover img,
+        .thumbnail-1:hover img,
+        .thumbnail-2:hover img,
+        .thumbnail-3:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* SVG Circles */
+        .circles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        
+        .circle {
+            position: absolute;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+        }
+        
+        .circle-1 {
+            width: 600px;
+            height: 600px;
+            top: -100px;
+            right: -100px;
+        }
+        
+        .circle-2 {
+            width: 400px;
+            height: 400px;
+            bottom: -100px;
+            left: -100px;
+        }
+        
+        .circle-3 {
+            width: 800px;
+            height: 800px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        /* Caption styles */
+        .caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.6);
+            font-size: 0.8rem;
+        }
+        
+        .caption p {
+            margin: 0;
+            color: #ccc;
+            text-transform: uppercase;
+        }
+        
+        /* Zoom Instruction */
+        .zoom-instruction {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+        
+        /* Note at the bottom */
+        .note {
+            position: absolute;
+            bottom: 2%;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            font-size: 0.8rem;
+            color: #999;
+            width: 80%;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Swiss Design Grid -->
+        <div class="grid-container">
+            <div class="grid-line"></div>
+        </div>
+        
+        <!-- Circles (SVG-like elements) -->
+        <div class="circles">
+            <div class="circle circle-1"></div>
+            <div class="circle circle-2"></div>
+            <div class="circle circle-3"></div>
+        </div>
+        
+        <!-- Neo-Brutalism Elements -->
+        <div class="neo-brutalism">
+            <div class="hero-text">
+                <h1>Branding that becomes iconic</h1>
+                <p>Think logos, taglines, and brand systems so cohesive they feel like second skin for your business.</p>
+            </div>
+        </div>
+        
+        <!-- Minimal Futurism Elements -->
+        <div class="tagline">
+            <h2>Great Designs Are Never an Accident</h2>
+        </div>
+        
+        <!-- Images with Hover Effects -->
+        <div class="main-image">
+            <img src="assets/images/Groups.png" alt="Branding workshop with sticky notes">
+            <div class="zoom-instruction">scroll to zoom</div>
+        </div>
+        
+        <div class="thumbnail-1">
+            <img src="assets/images/Groups.png" alt="Branding materials">
+            <div class="caption">
+                <p>Lorem ipsum dolor sit amet consectetur</p>
+            </div>
+        </div>
+        
+        <div class="thumbnail-2">
+            <img src="assets/images/Groups.png" alt="Branding workshop">
+            <div class="caption">
+                <p>Lorem ipsum dolor sit amet consectetur</p>
+            </div>
+        </div>
+        
+        <div class="thumbnail-3">
+            <img src="assets/images/Groups.png" alt="Branding ideas">
+            <div class="caption">
+                <p>Lorem ipsum dolor sit amet</p>
+            </div>
+        </div>
+        
+      
+        
+        <div class="note">
+            Their use of motion is subtle but impactful, enhancing the user experience without overwhelming the content.
+        </div>
+    </div>
+
+    <script>
+        // Initialize GSAP
+        document.addEventListener('DOMContentLoaded', function() {
+            // Register ScrollTrigger plugin
+            gsap.registerPlugin(ScrollTrigger);
+            
+            // Create Swiss Design grid
+            const gridContainer = document.querySelector('.grid-container');
+            for (let i = 0; i < 144; i++) {
+                const gridCell = document.createElement('div');
+                gridCell.classList.add('grid-line');
+                gridContainer.appendChild(gridCell);
+            }
+            
+            // Animation timeline
+            const tl = gsap.timeline();
+            
+            // Animate main elements
+            tl.to('.grid-container', { duration: 1, opacity: 0.15, ease: 'power2.inOut' })
+              .to('.main-image', { duration: 0.8, y: 0, opacity: 1, ease: 'power2.out' }, '-=0.5')
+              .to('.hero-text', { duration: 0.8, opacity: 1, ease: 'power2.out' }, '-=0.5')
+              .to('.tagline', { duration: 0.8, opacity: 1, ease: 'power2.out' }, '-=0.5')
+              .to('.thumbnail-1', { duration: 0.6, y: 0, opacity: 1, ease: 'power2.out' }, '-=0.3')
+              .to('.thumbnail-2', { duration: 0.6, y: 0, opacity: 1, ease: 'power2.out' }, '-=0.3')
+              .to('.thumbnail-3', { duration: 0.6, y: 0, opacity: 1, ease: 'power2.out' }, '-=0.3')
+              .to('.design-styles', { duration: 0.8, y: 0, opacity: 1, ease: 'power2.out' }, '-=0.2')
+              .to('.animation-styles', { duration: 0.8, y: 0, opacity: 1, ease: 'power2.out' }, '-=0.6')
+              .to('.note', { duration: 0.6, opacity: 0.7, ease: 'power2.out' }, '-=0.4');
+            
+            // Parallax effect
+            document.addEventListener('mousemove', (e) => {
+                const x = e.clientX / window.innerWidth;
+                const y = e.clientY / window.innerHeight;
+                
+                gsap.to('.circle', { duration: 0.5, x: x * 100, y: y * 100, ease: 'power2.out' });
+
+            });
+            
+            // Scroll to zoom effect
+            gsap.to('.main-image img', {
+                scale: 1.3,
+                filter: "blur(0px)",
+                scrollTrigger: {
+                    trigger: '.main-image',
+                    start: 'top center',
+                    end: 'bottom center',
+                    scrub: true
+                }
+            });
+            
+            // Thumbnail zoom effects
+            ['.thumbnail-1 img', '.thumbnail-2 img', '.thumbnail-3 img'].forEach(selector => {
+                gsap.to(selector, {
+                    scale: 1.2,
+                    filter: "blur(0px)",
+                    scrollTrigger: {
+                        trigger: selector,
+                        start: 'top bottom',
+                        end: 'bottom center',
+                        scrub: true
+                    }
+                });
+            });
+        });
+    </script>        
+
+</body>
