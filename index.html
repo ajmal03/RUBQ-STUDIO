@@ -522,7 +522,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         item.addEventListener('click', function() {
-            // Remove active class and hide arrow from all
+            // Remove active class and hide arrow from all items
             serviceItems.forEach(i => {
                 i.classList.remove('active');
                 const iArrow = i.querySelector('.arrow-icon');
@@ -530,7 +530,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     iArrow.style.display = 'none';
                 }
             });
-            // Add active class to clicked item and show arrow icon
+            // Add active class to clicked item and show its arrow
             this.classList.add('active');
             const currentArrow = this.querySelector('.arrow-icon');
             if(currentArrow) {
@@ -551,8 +551,8 @@ document.addEventListener('DOMContentLoaded', function() {
         color: #fff;
         padding: 80px 0;
         position: relative;
-        overflow: hidden;
-        min-height: 100vh;
+        /* Removed overflow: hidden */
+        /* Optionally you can add min-height if needed */
         display: flex;
         align-items: center;
         font-family: 'Arial', sans-serif;
@@ -571,15 +571,14 @@ document.addEventListener('DOMContentLoaded', function() {
         margin-bottom: 100px;
     }
     
-    /* Modified .logo-container */
     .logo-container {
         position: absolute;
-        top: -100px; /* Increased margin from top */
+        top: -100px;
         left: 50%;
         transform: translateX(-50%);
-        width: 150px;  /* Increased logo size */
-        height: 150px; /* Increased logo size */
-        padding: 15px; /* Added padding */
+        width: 150px;
+        height: 150px;
+        padding: 15px;
     }
     
     .logo-container img {
@@ -692,7 +691,6 @@ document.addEventListener('DOMContentLoaded', function() {
         width: 100%;
         height: auto;
         display: block;
-        
     }
     
     .background-pattern {
@@ -702,7 +700,7 @@ document.addEventListener('DOMContentLoaded', function() {
         width: 300px;
         height: 300px;
         background-image: url('assets/images/Frame 1618873287.png');
-        background-size: cover, 40px 40px, 40px 40px, 40px 40px, 40px 40px;
+        background-size: cover;
         transform: rotate(15deg);
         z-index: 0;
         opacity: 0.6;
@@ -732,29 +730,218 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 </style>
 
-<script>
-    // Tab image switcher
-    document.addEventListener("DOMContentLoaded", function() {
-        const serviceItems = document.querySelectorAll(".service-item");
-        const featuredImg = document.querySelector(".featured-image img");
+<!-- Comparison Section -->
+<section class="comparison-section">
+    <div class="bg-pattern"></div>
+    
+    <div class="content-container">
+        <div class="heading-row">
+            <div class="heading">With Us</div>
+            <div class="heading">Without Us</div>
+        </div>
+        
+        <div class="icon-plus">+</div>
+        
+        <div class="img-comparison">
+            <img class="img img-before" src="assets/images/image (2).png" alt="Leopard black and white">
+            <img class="img img-after" src="assets/images/image.png" alt="Leopard color">
+            
+            <div class="img-slider">
+                <div class="slider-btn"></div>
+            </div>
+        </div>
+    </div>
 
-        serviceItems.forEach(item => {
-            item.addEventListener("click", function() {
-                // Remove active class from all
-                serviceItems.forEach(i => i.classList.remove("active"));
-                // Add active to current
-                this.classList.add("active");
-                // Get new image source from data attribute
-                const newImg = this.getAttribute("data-image");
-                featuredImg.src = newImg;
-            });
-        });
-    });
-</script>
-
-
-
-
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const container = document.querySelector('.img-comparison');
+        const slider = document.querySelector('.img-slider');
+        const beforeImage = document.querySelector('.img-before');
+        
+        // Set initial position to middle (50%)
+        let position = 50;
+        updatePosition(position);
+        
+        let isDragging = false;
+        
+        slider.addEventListener('mousedown', startDrag);
+        slider.addEventListener('touchstart', startDrag, { passive: true });
+        
+        document.addEventListener('mousemove', drag);
+        document.addEventListener('touchmove', drag, { passive: false });
+        
+        document.addEventListener('mouseup', endDrag);
+        document.addEventListener('touchend', endDrag);
+        
+        function startDrag() {
+          isDragging = true;
+        }
+        
+        function drag(e) {
+          if (!isDragging) return;
+          e.preventDefault();
+          const containerRect = container.getBoundingClientRect();
+          let clientX;
+          if (e.type === 'touchmove') {
+            clientX = e.touches[0].clientX;
+          } else {
+            clientX = e.clientX;
+          }
+          position = ((clientX - containerRect.left) / containerRect.width) * 100;
+          position = Math.max(0, Math.min(100, position));
+          updatePosition(position);
+        }
+        
+        function endDrag() {
+          isDragging = false;
+        }
+        
+        function updatePosition(pos) {
+          document.documentElement.style.setProperty('--position', `${pos}%`);
+        }
+      });
+    </script>
+  
+    <style>
+      .comparison-section {
+        background-color: #000;
+        color: #fff;
+        font-family: Arial, sans-serif;
+        min-height: 100vh;
+        /* Removed fixed height and overflow to allow vertical scrolling */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        padding: 60px 0;
+      }
+      
+      .bg-pattern {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.1;
+        z-index: 0;
+      }
+      
+      .bg-pattern::before {
+        content: '';
+        position: absolute;
+        bottom: 10%;
+        left: 10%;
+        width: 20%;
+        height: 25%;
+        background: linear-gradient(45deg, #333 25%, transparent 25%),
+                    linear-gradient(-45deg, #333 25%, transparent 25%),
+                    linear-gradient(45deg, transparent 75%, #333 75%),
+                    linear-gradient(-45deg, transparent 75%, #333 75%);
+        background-size: 40px 40px;
+        transform: rotate(-15deg);
+      }
+      
+      .content-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 80%;
+        max-width: 1000px;
+        z-index: 1;
+      }
+      
+      .heading-row {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 20px;
+        padding: 0 20px;
+      }
+      
+      .heading {
+        font-size: 2.5rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        position: relative;
+      }
+      
+      .heading::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #fff;
+      }
+      
+      .icon-plus {
+        font-size: 2.5rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -80%);
+      }
+      
+      .img-comparison {
+        position: relative;
+        width: 100%;
+        max-width: 600px;
+        height: 400px;
+        overflow: hidden;
+        border-radius: 5px;
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+      }
+      
+      .img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        pointer-events: none;
+      }
+      .img-before {
+        clip-path: polygon(0 0, var(--position) 0, var(--position) 100%, 0 100%);
+        z-index: 2;
+      }
+      .img-slider {
+        position: absolute;
+        top: 0;
+        left: var(--position);
+        width: 2px;
+        height: 100%;
+        background-color: #fff;
+        cursor: ew-resize;
+        transform: translateX(-1px);
+        z-index: 3;
+      }
+        
+      /* Modified Slider Button */
+      .slider-btn {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 40px;
+        height: 40px;
+        background: linear-gradient(45deg, #fff, #ddd);
+        border: 3px solid #000;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        cursor: ew-resize;
+      }
+      .slider-btn::before {
+        content: '⇔';
+        font-size: 18px;
+        color: #000;
+      }
+    </style>
+</section>
 
 
 
