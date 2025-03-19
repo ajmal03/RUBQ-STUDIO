@@ -1267,36 +1267,14 @@
   <script>
 
     document.addEventListener('DOMContentLoaded', function() {
-      const craftItems = document.querySelectorAll('.craft-item');
       const title = document.querySelector('.title');
       const container = document.querySelector('.crafts-container');
       
-
       const pupils = document.querySelectorAll('.pupil');
       pupils.forEach(pupil => {
         const randomDelay = Math.random() * 2;
         pupil.style.animationDelay = `${randomDelay}s`;
       });
-      
-
-      document.addEventListener('mousemove', function(e) {
-        const eyes = document.querySelectorAll('.pupil');
-        eyes.forEach(eye => {
-          const eyeRect = eye.parentElement.getBoundingClientRect();
-          const eyeCenterX = eyeRect.left + eyeRect.width / 2;
-          const eyeCenterY = eyeRect.top + eyeRect.height / 2;
-          
-          const angle = Math.atan2(e.clientY - eyeCenterY, e.clientX - eyeCenterX);
-          const distance = Math.min(10, Math.sqrt(Math.pow(e.clientX - eyeCenterX, 2) + Math.pow(e.clientY - eyeCenterY, 2)) / 30);
-          
-          const x = Math.cos(angle) * distance + 15;
-          const y = Math.sin(angle) * distance + 15;
-          
-          eye.style.left = `${x}px`;
-          eye.style.top = `${y}px`;
-        });
-      });
-
 
       let isFixed = false;
       const containerTop = container.offsetTop;
@@ -1304,9 +1282,7 @@
 
       window.addEventListener('scroll', () => {
         const scrollPosition = window.scrollY;
-        const rect = title.getBoundingClientRect();
         const viewportHeight = window.innerHeight;
-        const viewportWidth = window.innerWidth;
 
         if (scrollPosition >= containerTop && scrollPosition <= containerTop + containerHeight) {
           if (!isFixed) {
@@ -1316,11 +1292,9 @@
           
           const scrollProgress = (scrollPosition - containerTop) / containerHeight;
           const scale = 1 + (scrollProgress * 1.5);
-          const fontSize = Math.min(viewportWidth, viewportHeight) * scrollProgress * 0.18;
           const opacity = 1 - scrollProgress;
           
           title.style.transform = `translateX(-50%) scale(${scale})`;
-          title.style.fontSize = `${fontSize}px`;
           title.style.opacity = opacity;
         } else {
           if (isFixed) {
@@ -2450,8 +2424,8 @@
 
                 <section class="video-section" style="padding: 60px 0; background-color: #ffffff; font-weight: bold; text-align: center; font-family: 'Gore Regular', sans-serif;">
                     <h2 style="color: #000000; font-size: 2.5rem; margin-bottom: 20px;">Customer Experiences <br>(CX) from scratch</h2>
-                    <div class="images" style="max-width: 1000px; margin: 0 auto; overflow: hidden; border-radius: 20px;">
-                        <video controls style="width: 100%; height: auto; display: block; border-radius: 20px;">
+                    <div class="images" style="max-width: 1000px; margin: 0 auto; overflow: hidden; ">
+                        <video controls style="width: 100%; height: auto; display: block; ">
                             <source src="assets/videos/your-video.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
