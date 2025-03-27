@@ -527,7 +527,7 @@
 
               @media screen and (max-width: 480px) {
                 .container {
-                      padding: 220px 15px;
+                      padding: 0px 15px;
                   }
 
                   .brand-statement {
@@ -1509,6 +1509,12 @@
       width: 100%;
       z-index: 100;
     }
+
+    @media screen and (max-width: 768px) {
+      .crafts-container {
+        display: none;
+      }
+    }
   </style>
 
   <div class="crafts-container">
@@ -1580,8 +1586,40 @@
         }
       });
     });
-  </script>  <!-- work section  -->  
-  <div id="works" class="section cc--clipx cc--cases" style="background-color: #000;">
+  </script>  
+  
+  <div class="section-OUR-CRAFTS" style="background-color: black; padding: 10px">
+    <h2 class="heading-crafts">OUR CRAFTS</h2>
+  </div>
+
+  <style>
+
+    .heading-crafts {
+        font-size: min(100px, 15vw);
+        font-weight: bold;
+        text-align: center;
+        color: #c2ff6b;
+       
+        letter-spacing: -3px;
+        margin: 50px 0;
+        text-transform: uppercase;
+        transition: all 0.3s ease-out;
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 1;
+        display: none;
+      }
+
+    @media screen and (max-width: 768px) {
+      .heading-crafts {
+        display: block;
+      }
+    }
+  </style>   
+  
+  <!-- work section  -->  <div id="works" class="section cc--clipx cc--cases" style="background-color: #000;">
     <div class="container">
         <div class="cases-track">
             <div class="sticky-full-screen w-dyn-list">
@@ -2796,15 +2834,14 @@
                     }
                 </style>
 <div style="background: #ffffff; color: #fff; padding: 20px;">
-    <section class="premium-section" style="position: relative; width: 80%;top: -50px; height: 300px; background: #fff; border: 1px solid #000; margin-bottom: 30px; margin-left: auto; margin-right: auto; transition: all 0.3s ease;">
-        <div class="premium-overlay" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; z-index: 2; width: 100%;" onmouseover="this.parentElement.style.background='#000'; this.style.color='#fff'; this.querySelector('h2').style.color='#fff'; this.querySelector('p').style.color='#fff';" onmouseout="this.parentElement.style.background='#fff'; this.style.color='#000'; this.querySelector('h2').style.color='#000'; this.querySelector('p').style.color='#000';">
-            <h2 style="font-size: 2.5rem; color: #000; margin-bottom: 20px; line-height: 1.2;">You don't have to break the Bank<img src="assets/images/chest (1).gif" style="display: inline; height: 80px; vertical-align: middle;">  to get Premium Designs</h2>
-            <p style="font-size: 1.2rem; color: #000; margin-bottom: 30px;">Get best offers on your design by booking us now</p>
-            <button style="background-color: #1A65CF; color: #fff; border: none; padding: 12px 24px; font-size: 1rem; cursor: pointer;">Get Premium Designs</button>
+    <section class="premium-section" style="position: relative; width: 90%; max-width: 800px; top: -50px; height: auto; min-height: 300px; background: #fff; border: 1px solid #000; margin-bottom: 30px; margin-left: auto; margin-right: auto; transition: all 0.3s ease; padding: 20px;">
+        <div class="premium-overlay" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; z-index: 2; width: 90%; padding: 15px;" onmouseover="this.parentElement.style.background='#000'; this.style.color='#fff'; this.querySelector('h2').style.color='#fff'; this.querySelector('p').style.color='#fff';" onmouseout="this.parentElement.style.background='#fff'; this.style.color='#000'; this.querySelector('h2').style.color='#000'; this.querySelector('p').style.color='#000';">
+            <h2 style="font-size: clamp(1.5rem, 4vw, 2.5rem); color: #000; margin-bottom: 20px; line-height: 1.2;">You don't have to break the Bank<img src="assets/images/chest (1).gif" style="display: inline; height: clamp(40px, 8vw, 80px); vertical-align: middle;">  to get Premium Designs</h2>
+            <p style="font-size: clamp(1rem, 2vw, 1.2rem); color: #000; margin-bottom: 30px;">Get best offers on your design by booking us now</p>
+            <button style="background-color: #1A65CF; color: #fff; border: none; padding: 12px 24px; font-size: clamp(0.9rem, 1.5vw, 1rem); cursor: pointer; width: auto; max-width: 100%;">Get Premium Designs</button>
         </div>
     </section>
 </div>
-
 <style>
 /* Footer Container */
 .footer {
@@ -3103,6 +3140,44 @@ https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/loaders/DRACOLoader.js
         </script>
         <script src="https://assets.slater.app/slater/4562/18224.js"></script>
 
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
 <!-- Code injected by live-server -->
 <script>
 	// <![CDATA[  <-- For SVG support
