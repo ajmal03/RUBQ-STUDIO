@@ -366,73 +366,98 @@
         
        
                       </section>
-                      <a href="#" class="cta-button btn btn-outline-light mt-4" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000; padding: 15px 30px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); background-color: black; border: 2px solid rgb(255, 255, 255);">Let's Talk</a>
+                      <!-- <a href="#" class="cta-button btn btn-outline-light mt-4" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000; padding: 15px 30px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); background-color: black; border: 2px solid rgb(255, 255, 255);">Let's Talk</a> -->
     
                       </style>    
+                            
                             <!-- Design Philosophy Section -->
-          <section  class="design-philosophy bg-light text-dark py-5" style="background: url('assets/images/Group 1410136454.png') no-repeat center center; background-size: cover; height: 100vh;">
+          <section class="design-philosophy bg-light text-dark py-5" style="background: url('assets/images/Group 1410136454.png') no-repeat center center; background-size: cover; height: auto; min-height: 100vh;">
               <div class="container">
                   <div class="content text-center">
                       <div class="brand-statement">
-                          <span>WE</span> <span>DON'T</span> <span>JUST</span> <span>DESIGN.</span> 
+                          <span>WE</span> <span>DON'T</span> <span>JUST</span> <span>DESIGN.</span>
                           <span>WE</span> <span>TRANSFORM.</span><br>
-                          <span>WE</span> <span>FUSE</span> <span>CREATIVITY</span> <span>WITH</span> <span>STRATEGY</span> <span>TO</span><br>
+                          <span>WE</span> <span>FUSE</span> <span>CREATIVITY</span> <span>WITH</span> <span>STRATEGY</span> <span>TO</span><br> 
                           <span>MAKE</span> <span>BRANDS</span> <span>GROW.</span>
+                          <img src="assets/images/RB.gif2.gif" alt="Seal" class="seal-gif">
                       </div>
                   </div>
-                  <img src="assets/images/Frame.png" alt="Design Logo" class="design-logo img-fluid punch">
-                  <img src="assets/images/Group 1410136455 (2).png" alt="Top Design Logo" class="top-design-logo img-fluid single-blink">
-                  <img src="assets/images/Group 143726194.png" alt="Sign" class="sign-logo img-fluid sign-animation">
               </div>
           </section>
 
           <style>
+            @font-face {
+              font-family: 'Gilroy';
+              src: url('https://cdn.jsdelivr.net/gh/repalash/gilroy-free-webfont@fonts/Gilroy-Extrabold.eot');
+              src: local('Gilroy Extrabold'), local('Gilroy-Extrabold'),
+              url('https://cdn.jsdelivr.net/gh/repalash/gilroy-free-webfont@fonts/Gilroy-Extrabold.eot?#iefix') format('embedded-opentype'),
+              url('https://cdn.jsdelivr.net/gh/repalash/gilroy-free-webfont@fonts/Gilroy-Extrabold.woff') format('woff'),
+              url('https://cdn.jsdelivr.net/gh/repalash/gilroy-free-webfont@fonts/Gilroy-Extrabold.ttf') format('truetype');
+              font-weight: 800;
+              font-style: normal;
+            }
+
+            @font-face {
+              font-family: 'Gilroy';
+              src: url('https://cdn.jsdelivr.net/gh/repalash/gilroy-free-webfont@fonts/Gilroy-Light.eot');
+              src: local('Gilroy Light'), local('Gilroy-Light'),
+              url('https://cdn.jsdelivr.net/gh/repalash/gilroy-free-webfont@fonts/Gilroy-Light.eot?#iefix') format('embedded-opentype'),
+              url('https://cdn.jsdelivr.net/gh/repalash/gilroy-free-webfont@fonts/Gilroy-Light.woff') format('woff'),
+              url('https://cdn.jsdelivr.net/gh/repalash/gilroy-free-webfont@fonts/Gilroy-Light.ttf') format('truetype');
+              font-weight: 300;
+              font-style: normal;
+            }
+
               .design-philosophy {
                   background-color: #ffffff;
-                  background-size: 30px 30px;
+                  background-size: cover;
                   color: #333;
                   line-height: 1.6;
-                  padding: 100px 20px;
-                  text-align: left;
+                  padding: 50px 20px;
+                  text-align: center;
                   position: relative;
-                  min-height: 100vh;
                   width: 100%;
               }
 
               .container {
                   max-width: 1200px;
                   margin: 0 auto;
-                  padding: 212px 20px;
+                  padding: 220px 15px;
               }
 
               .content {
                   display: flex;
                   flex-direction: column;
                   gap: 30px;
-                  max-width: 800px;
                   margin: 0 auto;
               }
 
               .brand-statement {
-                  font-family: "Montserrat Medium";
-                  font-size: 1.8rem;
+                  font-family: 'Gilroy', sans-serif;
+                  font-size: 60px;
                   color: #666;
-                  max-width: 700px;
                   text-align: center;
-                  transform: scale(0.94);
+                  position: relative;
+              }
+
+              .seal-gif {
+                  position: absolute;
+                  bottom: -250px;
+                  right: 35px;
+                  width: 340px;
+                  height: auto;
               }
 
               .brand-statement span {
                   display: inline-block;
                   opacity: 1;
                   color: #999;
-                  transition: all 0.001s;
+                  transition: all 0.5s ease;
               }
 
               .brand-statement span.visible {
                   opacity: 1;
                   color: #000;
-                  font-weight: bold;
               }
 
               .brand-statement span.fade {
@@ -440,149 +465,88 @@
                   color: #999;
               }
 
-              .design-logo {
-                  position: absolute;
-                  bottom: 162px;
-                  right: 491px;
-                  width: 150px;
-                  height: 150px;
-                  animation: punch 1.5s ease-out forwards;
-                  animation-delay: 0s;
-              }
-
-              .top-design-logo {
-                  position: absolute;
-                  bottom: 160px;
-                  right: 503px;
-                  width: 170px;
-                  height: 170px;
-                  animation: single-blink 2s forwards;
-                  animation-delay: 0.5s;
-              }
-
-              .sign-logo {
-                  position: absolute;
-                  bottom: 94px;
-                  right: 490px;
-                  width: 90px;
-                  height: 90px;
-                  animation: typing 3s steps(30) forwards;
-                  animation-delay: 1.5s;
-              }
-
-              @keyframes single-blink {
-                  0% { opacity: 0; }
-                  100% { opacity: 1; }
-              }
-
-              @keyframes punch {
-                  0% { transform: scale(1) rotate(0deg); }
-                  100% { transform: scale(1.15) rotate(-15deg); }
-              }
-
-              @keyframes typing {
-                  0% { clip-path: inset(0 100% 0 0); }
-                  100% { clip-path: inset(0 0 0 0); }
+              @media screen and (max-width: 1024px) {
+                  .brand-statement {
+                      font-size: 48px;
+                  }
+                  
+                  .seal-gif {
+                      width: 150px;
+                      bottom: -100px;
+                  }
               }
 
               @media screen and (max-width: 768px) {
                   .container {
-                      /* padding: 100px 15px; */
+                      padding: 30px 15px;
                   }
 
                   .brand-statement {
-                      font-size: 1.5rem;
-                      padding: 0 10px;
+                      font-size: 36px;
                   }
 
-                  .design-logo, .top-design-logo, .sign-logo {
-                      position: relative;
-                      bottom: auto;
-                      right: auto;
-                      display: block;
-                      margin: 20px auto;
-                      width: 100px;
-                      height: 100px;
-                  }
-
-                  .top-design-logo {
+                  .seal-gif {
                       width: 120px;
-                      height: 120px;
-                  }
-
-                  .sign-logo {
-                      width: 60px;
-                      height: 60px;
+                      bottom: -80px;
+                      right: 20px;
                   }
               }
 
               @media screen and (max-width: 480px) {
-                .container {
-                      padding: 0px 15px;
+                  .container {
+                      padding: 134px 10px;
                   }
 
                   .brand-statement {
-                      font-size: 1.5rem;
-                      padding: 0 10px;
+                      font-size: 24px;
                   }
 
-                  .design-logo, .top-design-logo, .sign-logo {
-                      position: relative;
-                      bottom: -10px;
-                      right: -107px;
-                      display: block;
-                      margin: 20px auto;
-                      width: 100px;
-                      height: 100px;
+                  .seal-gif {
+                      width: 200px;
+                      bottom: -175px;
+                      right: 11px;
                   }
 
-                  .top-design-logo {
-                      width: 120px;
-                      height: 120px;
-                      top: -130px;
-                      left: 94px;
-                  }
-
-                  .sign-logo {
-                      width: 60px;
-                      height: 60px;
-                      top: -160px;
-                      left: 115px;
+                  .brand-statement br {
+                      display: none;
                   }
               }
-              
           </style>    
 
           <script>
               document.addEventListener('DOMContentLoaded', function() {
                   const spans = document.querySelectorAll('.brand-statement span');
                   let lastScrollTop = 0;
+                  let scrollTimeout;
 
                   window.addEventListener('scroll', function() {
-                      const st = window.pageYOffset || document.documentElement.scrollTop;
-                      const scrollDirection = st > lastScrollTop ? 'down' : 'up';
-                      const scrollPercent = (st / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+                      clearTimeout(scrollTimeout);
+                      
+                      scrollTimeout = setTimeout(function() {
+                          const st = window.pageYOffset || document.documentElement.scrollTop;
+                          const scrollDirection = st > lastScrollTop ? 'down' : 'up';
+                          const scrollPercent = (st / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
 
-                      spans.forEach((span, index) => {
-                          const threshold = (index / spans.length) * 15; // Reduced threshold for even faster highlighting
-                    
-                          if (scrollDirection === 'down') {
-                              if (scrollPercent > threshold) {
-                                  span.classList.add('visible');
+                          spans.forEach((span, index) => {
+                              const threshold = (index / spans.length) * 12;
+                                
+                              if (scrollDirection === 'down') {
+                                  if (scrollPercent > threshold) {
+                                      span.classList.add('visible');
+                                  }
+                              } else {
+                                  if (scrollPercent < threshold) {
+                                      span.classList.remove('visible');
+                                  }
                               }
-                          } else {
-                              if (scrollPercent < threshold) {
-                                  span.classList.remove('visible');
-                              }
-                          }
-                      });
+                          });
 
-                      lastScrollTop = st <= 0 ? 0 : st;
+                          lastScrollTop = st <= 0 ? 0 : st;
+                      }, 150);
                   });
               });
           </script>
     <!-- Services Section -->    
-    
     
     
     <section class="services">
@@ -2817,11 +2781,17 @@
                     }
                 </style>
 <div style="background: #ffffff; color: #fff; padding: 20px;">
-    <section class="premium-section" style="position: relative; width: 90%; max-width: 800px; top: -50px; height: auto; min-height: 300px; background: #fff; border: 1px solid #000; margin-bottom: 30px; margin-left: auto; margin-right: auto; transition: all 0.3s ease; padding: 20px;">
-        <div class="premium-overlay" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; z-index: 2; width: 90%; padding: 15px;" onmouseover="this.parentElement.style.background='#000'; this.style.color='#fff'; this.querySelector('h2').style.color='#fff'; this.querySelector('p').style.color='#fff';" onmouseout="this.parentElement.style.background='#fff'; this.style.color='#000'; this.querySelector('h2').style.color='#000'; this.querySelector('p').style.color='#000';">
-            <h2 style="font-size: clamp(1.5rem, 4vw, 2.5rem); color: #000; margin-bottom: 20px; line-height: 1.2;">You don't have to break the Bank<img src="assets/images/chest (1).gif" style="display: inline; height: clamp(40px, 8vw, 80px); vertical-align: middle;">  to get Premium Designs</h2>
-            <p style="font-size: clamp(1rem, 2vw, 1.2rem); color: #000; margin-bottom: 30px;">Get best offers on your design by booking us now</p>
-            <button style="background-color: #1A65CF; color: #fff; border: none; padding: 12px 24px; font-size: clamp(0.9rem, 1.5vw, 1rem); cursor: pointer; width: auto; max-width: 100%;">Get Premium Designs</button>
+    <section class="premium-section" style="position: relative; width: 90%; max-width: 1000px; top: -50px; height: auto; min-height: 300px; background: #fff; border: 1px solid #000; margin-bottom: 30px; margin-left: auto; margin-right: auto; transition: all 0.3s ease; padding: 20px;">
+        <div class="premium-overlay" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; z-index: 2; width: 90%; padding: 15px;">
+            <h2 style="font-size: clamp(1.5rem, 4vw, 2.5rem); color: #000; margin-bottom: 20px; line-height: 1.2;">
+                You don't have to break the Bank<img src="assets/images/chest (1).gif" style="display: inline; height: clamp(40px, 8vw, 80px); vertical-align: middle;"> to get Premium Designs
+            </h2>
+            <p style="font-size: clamp(1rem, 2vw, 1.2rem); color: #000; margin-bottom: 30px;">
+                Get best offers on your design by booking us now
+            </p>
+            <button style="background-color: #1A65CF; color: #fff; border: none; padding: 12px 24px; font-size: clamp(0.9rem, 1.5vw, 1rem); cursor: pointer; width: auto; max-width: 100%;">
+                Get Premium Designs
+            </button>
         </div>
     </section>
 </div>
@@ -3123,6 +3093,310 @@ https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/loaders/DRACOLoader.js
         </script>
         <script src="https://assets.slater.app/slater/4562/18224.js"></script>
 
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+        <div<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
 <!-- Code injected by live-server -->
 <script>
 	// <![CDATA[  <-- For SVG support
