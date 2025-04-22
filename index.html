@@ -208,28 +208,42 @@
                               font-family: 'Anton', sans-serif;
                               position: relative;
                               overflow: hidden;
+                              border-radius: 0;
                           }
         
                           .cta-button:hover {
                               background-color: white;
                               color: black;
                           }
-
-                          .cta-button::before {
+        
+                          .cta-button::before,
+                          .cta-button::after {
                               content: '';
                               position: absolute;
                               top: 0;
-                              left: -100%;
-                              width: 100%;
+                              width: 50%;
                               height: 100%;
                               background-color: white;
                               transition: all 0.3s;
                               z-index: -1;
+                              border-radius: 0;
+                          }
+        
+                          .cta-button::before {
+                              left: -50%;
+                          }
+        
+                          .cta-button::after {
+                              right: -50%;
                           }
         
                           .cta-button:hover::before {
                               left: 0;
-                          }        
+                          }
+        
+                          .cta-button:hover::after {
+                              right: 0;
+                          }
 
                           @media (max-width: 768px) {
                             .hero-title {
@@ -373,15 +387,15 @@
                             <!-- Design Philosophy Section -->
           <section class="design-philosophy bg-light text-dark py-5" style="background: url('assets/images/Group 1410136454.png') no-repeat center center; background-size: cover; height: auto; min-height: 100vh;">
               <div class="container">
-                  <div class="content text-center">
-                      <div class="brand-statement">
-                          <span>WE</span> <span>DON'T</span> <span>JUST</span> <span>DESIGN.</span>
-                          <span>WE</span> <span>TRANSFORM.</span><br>
-                          <span>WE</span> <span>FUSE</span> <span>CREATIVITY</span> <span>WITH</span> <span>STRATEGY</span> <span>TO</span><br> 
-                          <span>MAKE</span> <span>BRANDS</span> <span>GROW.</span>
-                          <img src="assets/images/RB.gif2.gif" alt="Seal" class="seal-gif">
-                      </div>
-                  </div>
+                <div class="content text-center">
+                    <div class="brand-statement">
+                        <span>WE</span> <span>DON'T</span> <span>JUST</span> <span>DESIGN.</span>
+                        <span>WE</span> <span>TRANSFORM.</span><br>
+                        <span>WE</span> <span>FUSE</span> <span>CREATIVITY</span> <span>WITH</span> <span>STRATEGY</span> <span>TO</span><br> 
+                        <span>CRAFT</span> <span>BRANDS</span> <span>EXPERIENCES</span><span>THAT</span> <span>RESONATE</span>
+                        <img src="assets/images/RB.gif2.gif" alt="Seal" class="seal-gif">
+                    </div>
+                </div>
               </div>
           </section>
 
@@ -561,7 +575,7 @@
     
             <div class="services-content">
                 <div class="services-list">
-                    <div class="service-item" data-image="assets/images/Rectangle 25.png">
+                    <div class="service-item" data-image="assets/images/G0.png">
                         <h3>BRANDING</h3>
                         <div class="service-line"></div>
                         <div class="arrow-icon">
@@ -569,7 +583,7 @@
                         </div>
                     </div>
     
-                    <div class="service-item active" data-image="assets/images/Rectangle 25.png">
+                    <div class="service-item active" data-image="assets/images/G1.png">
                         <h3>UX/UI DESIGN</h3>
                         <div class="service-line"></div>
                         <div class="arrow-icon">
@@ -577,7 +591,7 @@
                         </div>
                     </div>
     
-                    <div class="service-item" data-image="assets/images/Rectangle 25.png">
+                    <div class="service-item" data-image="assets/images/G2.png">
                         <h3>MARKETING</h3>
                         <div class="service-line"></div>
                         <div class="arrow-icon">
@@ -585,7 +599,7 @@
                         </div>
                     </div>
     
-                    <div class="service-item" data-image="assets/images/Rectangle 25.png">
+                    <div class="service-item" data-image="assets/images/G3.png">
                         <h3>GRAPHIC DESIGN</h3>
                         <div class="service-line"></div>
                         <div class="arrow-icon">
@@ -593,7 +607,7 @@
                         </div>
                     </div>
     
-                    <div class="service-item" data-image="assets/images/Rectangle 25.png">
+                    <div class="service-item" data-image="assets/images/G4.png">
                         <h3>VIDEO EDITING</h3>
                         <div class="service-line"></div>
                         <div class="arrow-icon">
@@ -601,7 +615,7 @@
                         </div>
                     </div>
     
-                    <div class="service-item" data-image="assets/images/Rectangle 25.png">
+                    <div class="service-item" data-image="assets/images/G5.png">
                         <h3>DEVELOPING</h3>
                         <div class="service-line"></div>
                         <div class="arrow-icon">
@@ -1029,7 +1043,7 @@
         position: relative;
         width: 100%;
         max-width: 800px;
-        height: 500px;
+        height: 600px;
         overflow: hidden;
         border-radius: 5px;
         box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
@@ -1095,7 +1109,7 @@
         }
         
         .img-comparison {
-          height: 350px;
+          height: 400px;
         }
         
         .slider-btn {
@@ -1127,7 +1141,7 @@
         }
         
         .img-comparison {
-          height: 250px;
+          height: 300px;
         }
         
         .slider-btn {
@@ -1223,7 +1237,7 @@
       }
       
       .slide {
-        height: 50vh;
+        height: 100vh;
         scroll-snap-align: start;
         display: flex;
         flex-direction: column;
@@ -1354,25 +1368,25 @@
           <div class="slide">
             <div class="section-number">01</div>
             <h2 class="trick-title">CONCEPT</h2>
-            <p class="section-text">THIS IS WHERE THE SPARKS FLY. OUR TEAM CRAFTS BOLD, ORIGINAL IDEAS TO BRING YOUR BRAND TO LIFE.</p>
+            <p class="section-text">This is where the sparks fly. Our team crafts bold, original ideas to bring your brand to life.</p>
           </div>
           
           <div class="slide">
             <div class="section-number">02</div>
             <h2 class="trick-title">DESIGN</h2>
-            <p class="section-text">WITH THE CONCEPT AS OUR FOUNDATION, WE CRAFT VISUALLY STRIKING DESIGNS THAT COMMUNICATE YOUR MESSAGE EFFECTIVELY.</p>
+            <p class="section-text">Precision meets artistry as we bring those concepts to life with jaw-dropping visuals and razor-sharp strategy.</p>
           </div>
           
           <div class="slide">
             <div class="section-number">03</div>
-            <h2 class="trick-title">DEVELOP</h2>
-            <p class="section-text">OUR TECHNICAL EXPERTS BRING THE DESIGNS TO LIFE WITH CLEAN CODE AND FLAWLESS EXECUTION.</p>
+            <h2 class="trick-title">FEEDBACK</h2>
+            <p class="section-text">Your feedback is our secret weapon. Together, we polish until every pixel, word, and idea shines.</p>
           </div>
           
           <div class="slide">
             <div class="section-number">04</div>
             <h2 class="trick-title">DELIVER</h2>
-            <p class="section-text">WE LAUNCH YOUR PROJECT WITH PRECISION, ENSURING EVERYTHING WORKS PERFECTLY ACROSS ALL PLATFORMS.</p>
+            <p class="section-text">We don’t just hand over the final product. We give you a design solution that’s ready to conquer the world.</p>
           </div>
         </div>
       </div>
@@ -1584,7 +1598,7 @@
                             <div class="case-img">
                                 <div class="case-element">
                                     <div class="case-blur"></div>
-                                    <img src="https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66ead266ebdc28cf66f30340_Jobcannon%20cover%20(1).webp" loading="eager" alt="JobCannon" sizes="100vw" srcset="https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66ead266ebdc28cf66f30340_Jobcannon%20cover%20(1)-p-500.webp 500w, https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66ead266ebdc28cf66f30340_Jobcannon%20cover%20(1)-p-800.webp 800w, https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66ead266ebdc28cf66f30340_Jobcannon%20cover%20(1)-p-1080.webp 1080w, https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66ead266ebdc28cf66f30340_Jobcannon%20cover%20(1)-p-1600.webp 1600w, https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66ead266ebdc28cf66f30340_Jobcannon%20cover%20(1).webp 1875w" class="case-embed"/>
+                                    <img src="assets/images/craft-1.png" loading="eager" alt="JobCannon" sizes="100vw" srcset="assets\images/craft-1.png 1875w" class="case-embed"/>
                                     <div class="w-condition-invisible">
                                         <video loop="" muted="" autoplay="true" playsinline="true" crossorigin="anonymous" preload="metadata" class="case-embed">
                                             <source src="" type="video/mp4"/>
@@ -1594,10 +1608,10 @@
                             </div>
                             <div class="case-text">
                                 <div class="flex-sides">
-                                    <div class="additional-text">Visual Brand Identity</div>
-                                    <div class="additional-text case-year">2023</div>
+                                    <div class="additional-text">FIRST HELTH MEDICAL SERVICE APP</div>
+                                    <!-- <div class="additional-text case-year">2023</div> -->
                                 </div>
-                                <h3 class="p-large case-heading">JobCannon</h3>
+                                <!-- <h3 class="p-large case-heading">JobCannon</h3> -->
                                 <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 31 31" fill="none" class="corner third">
                                     <g filter="url(#filter0_d_8375_688)">
                                         <path d="M7 6V20H21" stroke="currentColor" stroke-width="1.5"></path>
@@ -1666,7 +1680,7 @@
                             <div class="case-img">
                                 <div class="case-element">
                                     <div class="case-blur"></div>
-                                    <img src="https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66f2853311ed945e147c0089_Frame%201510%20(1)_11zon.webp" loading="eager" alt="OCTY" sizes="100vw" srcset="https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66f2853311ed945e147c0089_Frame%201510%20(1)_11zon-p-500.webp 500w, https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66f2853311ed945e147c0089_Frame%201510%20(1)_11zon-p-800.webp 800w, https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66f2853311ed945e147c0089_Frame%201510%20(1)_11zon-p-1080.webp 1080w, https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66f2853311ed945e147c0089_Frame%201510%20(1)_11zon-p-1600.webp 1600w, https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66f2853311ed945e147c0089_Frame%201510%20(1)_11zon-p-2000.webp 2000w, https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66f2853311ed945e147c0089_Frame%201510%20(1)_11zon.webp 2054w" class="case-embed"/>
+                                    <img src="assets/images/craft-2.png" loading="eager" alt="OCTY" sizes="100vw" srcset="assets/images/craft-2.png 2054w" class="case-embed"/>
                                     <div class="w-condition-invisible">
                                         <video loop="" muted="" autoplay="true" playsinline="true" crossorigin="anonymous" preload="metadata" class="case-embed">
                                             <source src="" type="video/mp4"/>
@@ -1676,10 +1690,10 @@
                             </div>
                             <div class="case-text">
                                 <div class="flex-sides">
-                                    <div class="additional-text">UI/UX, WOW Website, Motion Design, Visual Brand Identity</div>
-                                    <div class="additional-text case-year">2023</div>
+                                    <div class="additional-text">Office management dashboard</div>
+                                    <!-- <div class="additional-text case-year">2023</div> -->
                                 </div>
-                                <h3 class="p-large case-heading">OCTY</h3>
+                                <!-- <h3 class="p-large case-heading">OCTY</h3> -->
                                 <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 31 31" fill="none" class="corner third">
                                     <g filter="url(#filter0_d_8375_688)">
                                         <path d="M7 6V20H21" stroke="currentColor" stroke-width="1.5"></path>
@@ -1756,7 +1770,7 @@
                             <div class="case-img">
                                 <div class="case-element">
                                     <div class="case-blur"></div>
-                                    <img src="https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66c2fb9e3f6522e6210e7a3a_cover-_2_.webp" loading="eager" alt="EdWay" sizes="100vw" srcset="https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66c2fb9e3f6522e6210e7a3a_cover-_2_-p-500.webp 500w, https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66c2fb9e3f6522e6210e7a3a_cover-_2_-p-800.webp 800w, https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66c2fb9e3f6522e6210e7a3a_cover-_2_-p-1080.webp 1080w, https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66c2fb9e3f6522e6210e7a3a_cover-_2_-p-1600.webp 1600w, https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66c2fb9e3f6522e6210e7a3a_cover-_2_.webp 1800w" class="case-embed"/>
+                                    <img src="assets\images/craft-3.png" loading="eager" alt="EdWay" sizes="100vw" srcset="https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66c2fb9e3f6522e6210e7a3a_cover-_2_-p-500.webp 500w, https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66c2fb9e3f6522e6210e7a3a_cover-_2_-p-800.webp 800w, https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66c2fb9e3f6522e6210e7a3a_cover-_2_-p-1080.webp 1080w, https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66c2fb9e3f6522e6210e7a3a_cover-_2_-p-1600.webp 1600w, https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66c2fb9e3f6522e6210e7a3a_cover-_2_.webp 1800w" class="case-embed"/>
                                     <div class="w-condition-invisible">
                                         <video loop="" muted="" autoplay="true" playsinline="true" crossorigin="anonymous" preload="metadata" class="case-embed">
                                             <source src="" type="video/mp4"/>
@@ -1766,10 +1780,10 @@
                             </div>
                             <div class="case-text">
                                 <div class="flex-sides">
-                                    <div class="additional-text">UI/UX, Product Design</div>
-                                    <div class="additional-text case-year">2022</div>
+                                    <div class="additional-text">zeetius -  APP & WEB</div>
+                                    <!-- <div class="additional-text case-year">2022</div> -->
                                 </div>
-                                <h3 class="p-large case-heading">EdWay</h3>
+                                <!-- <h3 class="p-large case-heading">EdWay</h3> -->
                                 <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 31 31" fill="none" class="corner third">
                                     <g filter="url(#filter0_d_8375_688)">
                                         <path d="M7 6V20H21" stroke="currentColor" stroke-width="1.5"></path>
@@ -1846,7 +1860,7 @@
                             <div class="case-img">
                                 <div class="case-element">
                                     <div class="case-blur"></div>
-                                    <img src="https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66f2856f9671a128c8378666_Frame%201511%20(1)_11zon.webp" loading="eager" alt="Procamp" sizes="100vw" srcset="https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66f2856f9671a128c8378666_Frame%201511%20(1)_11zon-p-500.webp 500w, https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66f2856f9671a128c8378666_Frame%201511%20(1)_11zon-p-800.webp 800w, https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66f2856f9671a128c8378666_Frame%201511%20(1)_11zon-p-1080.webp 1080w, https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66f2856f9671a128c8378666_Frame%201511%20(1)_11zon-p-1600.webp 1600w, https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66f2856f9671a128c8378666_Frame%201511%20(1)_11zon-p-2000.webp 2000w, https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66f2856f9671a128c8378666_Frame%201511%20(1)_11zon.webp 2054w" class="case-embed"/>
+                                    <img src="assets/images/craft-4.png" loading="eager" alt="Procamp" sizes="100vw" srcset="assets/images/craft-4.png 2054w" class="case-embed"/>
                                     <div class="w-condition-invisible">
                                         <video loop="" muted="" autoplay="true" playsinline="true" crossorigin="anonymous" preload="metadata" class="case-embed">
                                             <source src="" type="video/mp4"/>
@@ -1856,10 +1870,10 @@
                             </div>
                             <div class="case-text">
                                 <div class="flex-sides">
-                                    <div class="additional-text">UI/UX, WOW Website, Visual Brand Identity</div>
-                                    <div class="additional-text case-year">2023</div>
+                                    <div class="additional-text">CREATIVE POSTERS</div>
+                                    <!-- <div class="additional-text case-year">2023</div> -->
                                 </div>
-                                <h3 class="p-large case-heading">Procamp</h3>
+                                <!-- <h3 class="p-large case-heading">Procamp</h3> -->
                                 <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 31 31" fill="none" class="corner third">
                                     <g filter="url(#filter0_d_8375_688)">
                                         <path d="M7 6V20H21" stroke="currentColor" stroke-width="1.5"></path>
@@ -1936,7 +1950,7 @@
                             <div class="case-img">
                                 <div class="case-element">
                                     <div class="case-blur"></div>
-                                    <img src="https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66bafabe096efabe8d8862bb_Behance-Cover%20(1).webp" loading="eager" alt="The 23" sizes="100vw" srcset="https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66bafabe096efabe8d8862bb_Behance-Cover%20(1)-p-500.webp 500w, https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66bafabe096efabe8d8862bb_Behance-Cover%20(1)-p-800.webp 800w, https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66bafabe096efabe8d8862bb_Behance-Cover%20(1)-p-1080.webp 1080w, https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66bafabe096efabe8d8862bb_Behance-Cover%20(1)-p-1600.webp 1600w, https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66bafabe096efabe8d8862bb_Behance-Cover%20(1).webp 1616w" class="case-embed"/>
+                                    <img src="assets/images/craft-2.png" loading="eager" alt="The 23" sizes="100vw" srcset="assets/images/craft-2.png 1616w" class="case-embed"/>
                                     <div class="w-condition-invisible">
                                         <video loop="" muted="" autoplay="true" playsinline="true" crossorigin="anonymous" preload="metadata" class="case-embed">
                                             <source src="" type="video/mp4"/>
@@ -1946,10 +1960,10 @@
                             </div>
                             <div class="case-text">
                                 <div class="flex-sides">
-                                    <div class="additional-text">Motion Design, Visual Brand Identity</div>
-                                    <div class="additional-text case-year">2023</div>
+                                    <div class="additional-text">Office management dashboard</div>
+                                    <!-- <div class="additional-text case-year">2023</div> -->
                                 </div>
-                                <h3 class="p-large case-heading">The 23</h3>
+                                <!-- <h3 class="p-large case-heading">The 23</h3> -->
                                 <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 31 31" fill="none" class="corner third">
                                     <g filter="url(#filter0_d_8375_688)">
                                         <path d="M7 6V20H21" stroke="currentColor" stroke-width="1.5"></path>
@@ -2026,7 +2040,7 @@
                             <div class="case-img">
                                 <div class="case-element">
                                     <div class="case-blur"></div>
-                                    <img src="https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66f284e1475d07e10dc89bb8_Frame%201509%20(1)_11zon.webp" loading="eager" alt="Simply Contact" sizes="100vw" srcset="https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66f284e1475d07e10dc89bb8_Frame%201509%20(1)_11zon-p-500.webp 500w, https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66f284e1475d07e10dc89bb8_Frame%201509%20(1)_11zon-p-800.webp 800w, https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66f284e1475d07e10dc89bb8_Frame%201509%20(1)_11zon-p-1080.webp 1080w, https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66f284e1475d07e10dc89bb8_Frame%201509%20(1)_11zon-p-1600.webp 1600w, https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66f284e1475d07e10dc89bb8_Frame%201509%20(1)_11zon-p-2000.webp 2000w, https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66f284e1475d07e10dc89bb8_Frame%201509%20(1)_11zon.webp 2054w" class="case-embed"/>
+                                    <img src="assets/images/craft-1.png" loading="eager" alt="Simply Contact" sizes="100vw" srcset="assets/images/craft-1.png 2054w" class="case-embed"/>
                                     <div class="w-condition-invisible">
                                         <video loop="" muted="" autoplay="true" playsinline="true" crossorigin="anonymous" preload="metadata" class="case-embed">
                                             <source src="" type="video/mp4"/>
@@ -2036,10 +2050,10 @@
                             </div>
                             <div class="case-text">
                                 <div class="flex-sides">
-                                    <div class="additional-text">UI/UX, WOW Website, Motion Design</div>
-                                    <div class="additional-text case-year">2021</div>
+                                    <div class="additional-text">FIRST HELTH MEDICAL SERVICE APP</div>
+                                    <!-- <div class="additional-text case-year">2021</div> -->
                                 </div>
-                                <h3 class="p-large case-heading">Simply Contact</h3>
+                                <!-- <h3 class="p-large case-heading">Simply Contact</h3> -->
                                 <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 31 31" fill="none" class="corner third">
                                     <g filter="url(#filter0_d_8375_688)">
                                         <path d="M7 6V20H21" stroke="currentColor" stroke-width="1.5"></path>
@@ -2111,549 +2125,13 @@
                             </defs>
                         </svg>
                     </div>
-                    <div role="listitem" class="case w-dyn-item">
-                        <a href="/projects/umami-view" class="case-wrapper w-inline-block">
-                            <div class="case-img">
-                                <div class="case-element">
-                                    <div class="case-blur"></div>
-                                    <img src="https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66c8316006aecd15eecf26ea_Umami%20View_Cover_11zon.webp" loading="eager" alt="Umami View" sizes="100vw" srcset="https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66c8316006aecd15eecf26ea_Umami%20View_Cover_11zon-p-500.webp 500w, https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66c8316006aecd15eecf26ea_Umami%20View_Cover_11zon-p-800.webp 800w, https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66c8316006aecd15eecf26ea_Umami%20View_Cover_11zon-p-1080.webp 1080w, https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66c8316006aecd15eecf26ea_Umami%20View_Cover_11zon-p-1600.webp 1600w, https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66c8316006aecd15eecf26ea_Umami%20View_Cover_11zon.webp 1616w" class="case-embed"/>
-                                    <div class="w-condition-invisible">
-                                        <video loop="" muted="" autoplay="true" playsinline="true" crossorigin="anonymous" preload="metadata" class="case-embed">
-                                            <source src="" type="video/mp4"/>
-                                        </video>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="case-text">
-                                <div class="flex-sides">
-                                    <div class="additional-text">UI/UX, Product Design</div>
-                                    <div class="additional-text case-year">2020</div>
-                                </div>
-                                <h3 class="p-large case-heading">Umami View</h3>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 31 31" fill="none" class="corner third">
-                                    <g filter="url(#filter0_d_8375_688)">
-                                        <path d="M7 6V20H21" stroke="currentColor" stroke-width="1.5"></path>
-                                    </g>
-                                    <defs>
-                                        <filter id="filter0_d_8375_688" x="0.25" y="0" width="30.75" height="30.75" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                                            <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
-                                            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix>
-                                            <feOffset dx="2" dy="2"></feOffset>
-                                            <feGaussianBlur stdDeviation="4"></feGaussianBlur>
-                                            <feComposite in2="hardAlpha" operator="out"></feComposite>
-                                            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0.458824 0 0 0 0 1 0 0 0 1 0"></feColorMatrix>
-                                            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_8375_688"></feBlend>
-                                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_8375_688" result="shape"></feBlend>
-                                        </filter>
-                                    </defs>
-                                </svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 31 31" fill="none" class="corner forth">
-                                    <g filter="url(#filter0_d_8375_691)">
-                                        <path d="M20 6V20H6" stroke="currentColor" stroke-width="1.5"></path>
-                                    </g>
-                                    <defs>
-                                        <filter id="filter0_d_8375_691" x="0" y="0" width="30.75" height="30.75" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                                            <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
-                                            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix>
-                                            <feOffset dx="2" dy="2"></feOffset>
-                                            <feGaussianBlur stdDeviation="4"></feGaussianBlur>
-                                            <feComposite in2="hardAlpha" operator="out"></feComposite>
-                                            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0.458824 0 0 0 0 1 0 0 0 1 0"></feColorMatrix>
-                                            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_8375_691"></feBlend>
-                                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_8375_691" result="shape"></feBlend>
-                                        </filter>
-                                    </defs>
-                                </svg>
-                            </div>
-                        </a>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 31 31" fill="none" class="corner second">
-                            <g filter="url(#filter0_d_8375_690)">
-                                <path d="M20 21V7H6" stroke="currentColor" stroke-width="1.5"></path>
-                            </g>
-                            <defs>
-                                <filter id="filter0_d_8375_690" x="0" y="0.25" width="30.75" height="30.75" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                                    <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
-                                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix>
-                                    <feOffset dx="2" dy="2"></feOffset>
-                                    <feGaussianBlur stdDeviation="4"></feGaussianBlur>
-                                    <feComposite in2="hardAlpha" operator="out"></feComposite>
-                                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0.458824 0 0 0 0 1 0 0 0 1 0"></feColorMatrix>
-                                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_8375_690"></feBlend>
-                                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_8375_690" result="shape"></feBlend>
-                                </filter>
-                            </defs>
-                        </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 31 31" fill="none" class="corner first">
-                            <g filter="url(#filter0_d_8375_687)">
-                                <path d="M7 21V7H21" stroke="currentColor" stroke-width="1.5"></path>
-                            </g>
-                            <defs>
-                                <filter id="filter0_d_8375_687" x="0.25" y="0.25" width="30.75" height="30.75" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                                    <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
-                                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix>
-                                    <feOffset dx="2" dy="2"></feOffset>
-                                    <feGaussianBlur stdDeviation="4"></feGaussianBlur>
-                                    <feComposite in2="hardAlpha" operator="out"></feComposite>
-                                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0.458824 0 0 0 0 1 0 0 0 1 0"></feColorMatrix>
-                                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_8375_687"></feBlend>
-                                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_8375_687" result="shape"></feBlend>
-                                </filter>
-                            </defs>
-                        </svg>
-                    </div>
-                    <div role="listitem" class="case w-dyn-item">
-                        <a href="/projects/sirius" class="case-wrapper w-inline-block">
-                            <div class="case-img">
-                                <div class="case-element">
-                                    <div class="case-blur"></div>
-                                    <img src="https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66f285a933ecbaddd339f8d7_Frame%201513%20(1)_11zon.webp" loading="eager" alt="Sirius" sizes="100vw" srcset="https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66f285a933ecbaddd339f8d7_Frame%201513%20(1)_11zon-p-500.webp 500w, https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66f285a933ecbaddd339f8d7_Frame%201513%20(1)_11zon-p-800.webp 800w, https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66f285a933ecbaddd339f8d7_Frame%201513%20(1)_11zon-p-1080.webp 1080w, https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66f285a933ecbaddd339f8d7_Frame%201513%20(1)_11zon-p-1600.webp 1600w, https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66f285a933ecbaddd339f8d7_Frame%201513%20(1)_11zon-p-2000.webp 2000w, https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66f285a933ecbaddd339f8d7_Frame%201513%20(1)_11zon.webp 2054w" class="case-embed"/>
-                                    <div class="w-condition-invisible">
-                                        <video loop="" muted="" autoplay="true" playsinline="true" crossorigin="anonymous" preload="metadata" class="case-embed">
-                                            <source src="" type="video/mp4"/>
-                                        </video>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="case-text">
-                                <div class="flex-sides">
-                                    <div class="additional-text">UI/UX, WOW Website, Visual Brand Identity</div>
-                                    <div class="additional-text case-year">2022</div>
-                                </div>
-                                <h3 class="p-large case-heading">Sirius</h3>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 31 31" fill="none" class="corner third">
-                                    <g filter="url(#filter0_d_8375_688)">
-                                        <path d="M7 6V20H21" stroke="currentColor" stroke-width="1.5"></path>
-                                    </g>
-                                    <defs>
-                                        <filter id="filter0_d_8375_688" x="0.25" y="0" width="30.75" height="30.75" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                                            <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
-                                            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix>
-                                            <feOffset dx="2" dy="2"></feOffset>
-                                            <feGaussianBlur stdDeviation="4"></feGaussianBlur>
-                                            <feComposite in2="hardAlpha" operator="out"></feComposite>
-                                            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0.458824 0 0 0 0 1 0 0 0 1 0"></feColorMatrix>
-                                            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_8375_688"></feBlend>
-                                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_8375_688" result="shape"></feBlend>
-                                        </filter>
-                                    </defs>
-                                </svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 31 31" fill="none" class="corner forth">
-                                    <g filter="url(#filter0_d_8375_691)">
-                                        <path d="M20 6V20H6" stroke="currentColor" stroke-width="1.5"></path>
-                                    </g>
-                                    <defs>
-                                        <filter id="filter0_d_8375_691" x="0" y="0" width="30.75" height="30.75" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                                            <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
-                                            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix>
-                                            <feOffset dx="2" dy="2"></feOffset>
-                                            <feGaussianBlur stdDeviation="4"></feGaussianBlur>
-                                            <feComposite in2="hardAlpha" operator="out"></feComposite>
-                                            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0.458824 0 0 0 0 1 0 0 0 1 0"></feColorMatrix>
-                                            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_8375_691"></feBlend>
-                                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_8375_691" result="shape"></feBlend>
-                                        </filter>
-                                    </defs>
-                                </svg>
-                            </div>
-                        </a>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 31 31" fill="none" class="corner second">
-                            <g filter="url(#filter0_d_8375_690)">
-                                <path d="M20 21V7H6" stroke="currentColor" stroke-width="1.5"></path>
-                            </g>
-                            <defs>
-                                <filter id="filter0_d_8375_690" x="0" y="0.25" width="30.75" height="30.75" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                                    <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
-                                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix>
-                                    <feOffset dx="2" dy="2"></feOffset>
-                                    <feGaussianBlur stdDeviation="4"></feGaussianBlur>
-                                    <feComposite in2="hardAlpha" operator="out"></feComposite>
-                                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0.458824 0 0 0 0 1 0 0 0 1 0"></feColorMatrix>
-                                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_8375_690"></feBlend>
-                                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_8375_690" result="shape"></feBlend>
-                                </filter>
-                            </defs>
-                        </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 31 31" fill="none" class="corner first">
-                            <g filter="url(#filter0_d_8375_687)">
-                                <path d="M7 21V7H21" stroke="currentColor" stroke-width="1.5"></path>
-                            </g>
-                            <defs>
-                                <filter id="filter0_d_8375_687" x="0.25" y="0.25" width="30.75" height="30.75" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                                    <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
-                                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix>
-                                    <feOffset dx="2" dy="2"></feOffset>
-                                    <feGaussianBlur stdDeviation="4"></feGaussianBlur>
-                                    <feComposite in2="hardAlpha" operator="out"></feComposite>
-                                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0.458824 0 0 0 0 1 0 0 0 1 0"></feColorMatrix>
-                                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_8375_687"></feBlend>
-                                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_8375_687" result="shape"></feBlend>
-                                </filter>
-                            </defs>
-                        </svg>
-                    </div>
-                    <div role="listitem" class="case w-dyn-item">
-                        <a href="/projects/30ua" class="case-wrapper w-inline-block">
-                            <div class="case-img">
-                                <div class="case-element">
-                                    <div class="case-blur"></div>
-                                    <img src="https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66d011782515a06c63c254f0_SOTD%20(1)_11zon.webp" loading="eager" alt="#30ua" sizes="100vw" srcset="https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66d011782515a06c63c254f0_SOTD%20(1)_11zon-p-500.webp 500w, https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66d011782515a06c63c254f0_SOTD%20(1)_11zon-p-800.webp 800w, https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66d011782515a06c63c254f0_SOTD%20(1)_11zon-p-1080.webp 1080w, https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66d011782515a06c63c254f0_SOTD%20(1)_11zon-p-1600.webp 1600w, https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66d011782515a06c63c254f0_SOTD%20(1)_11zon.webp 1710w" class="case-embed"/>
-                                    <div class="w-condition-invisible">
-                                        <video loop="" muted="" autoplay="true" playsinline="true" crossorigin="anonymous" preload="metadata" class="case-embed">
-                                            <source src="" type="video/mp4"/>
-                                        </video>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="case-text">
-                                <div class="flex-sides">
-                                    <div class="additional-text">UI/UX, WOW Website, Visual Brand Identity</div>
-                                    <div class="additional-text case-year">2021</div>
-                                </div>
-                                <h3 class="p-large case-heading">#30ua</h3>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 31 31" fill="none" class="corner third">
-                                    <g filter="url(#filter0_d_8375_688)">
-                                        <path d="M7 6V20H21" stroke="currentColor" stroke-width="1.5"></path>
-                                    </g>
-                                    <defs>
-                                        <filter id="filter0_d_8375_688" x="0.25" y="0" width="30.75" height="30.75" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                                            <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
-                                            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix>
-                                            <feOffset dx="2" dy="2"></feOffset>
-                                            <feGaussianBlur stdDeviation="4"></feGaussianBlur>
-                                            <feComposite in2="hardAlpha" operator="out"></feComposite>
-                                            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0.458824 0 0 0 0 1 0 0 0 1 0"></feColorMatrix>
-                                            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_8375_688"></feBlend>
-                                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_8375_688" result="shape"></feBlend>
-                                        </filter>
-                                    </defs>
-                                </svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 31 31" fill="none" class="corner forth">
-                                    <g filter="url(#filter0_d_8375_691)">
-                                        <path d="M20 6V20H6" stroke="currentColor" stroke-width="1.5"></path>
-                                    </g>
-                                    <defs>
-                                        <filter id="filter0_d_8375_691" x="0" y="0" width="30.75" height="30.75" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                                            <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
-                                            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix>
-                                            <feOffset dx="2" dy="2"></feOffset>
-                                            <feGaussianBlur stdDeviation="4"></feGaussianBlur>
-                                            <feComposite in2="hardAlpha" operator="out"></feComposite>
-                                            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0.458824 0 0 0 0 1 0 0 0 1 0"></feColorMatrix>
-                                            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_8375_691"></feBlend>
-                                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_8375_691" result="shape"></feBlend>
-                                        </filter>
-                                    </defs>
-                                </svg>
-                            </div>
-                        </a>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 31 31" fill="none" class="corner second">
-                            <g filter="url(#filter0_d_8375_690)">
-                                <path d="M20 21V7H6" stroke="currentColor" stroke-width="1.5"></path>
-                            </g>
-                            <defs>
-                                <filter id="filter0_d_8375_690" x="0" y="0.25" width="30.75" height="30.75" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                                    <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
-                                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix>
-                                    <feOffset dx="2" dy="2"></feOffset>
-                                    <feGaussianBlur stdDeviation="4"></feGaussianBlur>
-                                    <feComposite in2="hardAlpha" operator="out"></feComposite>
-                                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0.458824 0 0 0 0 1 0 0 0 1 0"></feColorMatrix>
-                                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_8375_690"></feBlend>
-                                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_8375_690" result="shape"></feBlend>
-                                </filter>
-                            </defs>
-                        </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 31 31" fill="none" class="corner first">
-                            <g filter="url(#filter0_d_8375_687)">
-                                <path d="M7 21V7H21" stroke="currentColor" stroke-width="1.5"></path>
-                            </g>
-                            <defs>
-                                <filter id="filter0_d_8375_687" x="0.25" y="0.25" width="30.75" height="30.75" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                                    <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
-                                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix>
-                                    <feOffset dx="2" dy="2"></feOffset>
-                                    <feGaussianBlur stdDeviation="4"></feGaussianBlur>
-                                    <feComposite in2="hardAlpha" operator="out"></feComposite>
-                                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0.458824 0 0 0 0 1 0 0 0 1 0"></feColorMatrix>
-                                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_8375_687"></feBlend>
-                                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_8375_687" result="shape"></feBlend>
-                                </filter>
-                            </defs>
-                        </svg>
-                    </div>
-                    <div role="listitem" class="case w-dyn-item">
-                        <a href="/projects/crocs-club" class="case-wrapper w-inline-block">
-                            <div class="case-img">
-                                <div class="case-element">
-                                    <div class="case-blur"></div>
-                                    <img src="https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66f284a75d1667682e1d417a_Frame%201388%20(1)_11zon.webp" loading="eager" alt="Crocs Club" sizes="100vw" srcset="https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66f284a75d1667682e1d417a_Frame%201388%20(1)_11zon-p-500.webp 500w, https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66f284a75d1667682e1d417a_Frame%201388%20(1)_11zon-p-800.webp 800w, https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66f284a75d1667682e1d417a_Frame%201388%20(1)_11zon-p-1080.webp 1080w, https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66f284a75d1667682e1d417a_Frame%201388%20(1)_11zon-p-1600.webp 1600w, https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66f284a75d1667682e1d417a_Frame%201388%20(1)_11zon-p-2000.webp 2000w, https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66f284a75d1667682e1d417a_Frame%201388%20(1)_11zon.webp 2054w" class="case-embed"/>
-                                    <div class="w-condition-invisible">
-                                        <video loop="" muted="" autoplay="true" playsinline="true" crossorigin="anonymous" preload="metadata" class="case-embed">
-                                            <source src="" type="video/mp4"/>
-                                        </video>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="case-text">
-                                <div class="flex-sides">
-                                    <div class="additional-text">UI/UX, WOW Website, Motion Design</div>
-                                    <div class="additional-text case-year">2022</div>
-                                </div>
-                                <h3 class="p-large case-heading">Crocs Club</h3>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 31 31" fill="none" class="corner third">
-                                    <g filter="url(#filter0_d_8375_688)">
-                                        <path d="M7 6V20H21" stroke="currentColor" stroke-width="1.5"></path>
-                                    </g>
-                                    <defs>
-                                        <filter id="filter0_d_8375_688" x="0.25" y="0" width="30.75" height="30.75" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                                            <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
-                                            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix>
-                                            <feOffset dx="2" dy="2"></feOffset>
-                                            <feGaussianBlur stdDeviation="4"></feGaussianBlur>
-                                            <feComposite in2="hardAlpha" operator="out"></feComposite>
-                                            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0.458824 0 0 0 0 1 0 0 0 1 0"></feColorMatrix>
-                                            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_8375_688"></feBlend>
-                                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_8375_688" result="shape"></feBlend>
-                                        </filter>
-                                    </defs>
-                                </svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 31 31" fill="none" class="corner forth">
-                                    <g filter="url(#filter0_d_8375_691)">
-                                        <path d="M20 6V20H6" stroke="currentColor" stroke-width="1.5"></path>
-                                    </g>
-                                    <defs>
-                                        <filter id="filter0_d_8375_691" x="0" y="0" width="30.75" height="30.75" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                                            <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
-                                            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix>
-                                            <feOffset dx="2" dy="2"></feOffset>
-                                            <feGaussianBlur stdDeviation="4"></feGaussianBlur>
-                                            <feComposite in2="hardAlpha" operator="out"></feComposite>
-                                            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0.458824 0 0 0 0 1 0 0 0 1 0"></feColorMatrix>
-                                            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_8375_691"></feBlend>
-                                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_8375_691" result="shape"></feBlend>
-                                        </filter>
-                                    </defs>
-                                </svg>
-                            </div>
-                        </a>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 31 31" fill="none" class="corner second">
-                            <g filter="url(#filter0_d_8375_690)">
-                                <path d="M20 21V7H6" stroke="currentColor" stroke-width="1.5"></path>
-                            </g>
-                            <defs>
-                                <filter id="filter0_d_8375_690" x="0" y="0.25" width="30.75" height="30.75" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                                    <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
-                                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix>
-                                    <feOffset dx="2" dy="2"></feOffset>
-                                    <feGaussianBlur stdDeviation="4"></feGaussianBlur>
-                                    <feComposite in2="hardAlpha" operator="out"></feComposite>
-                                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0.458824 0 0 0 0 1 0 0 0 1 0"></feColorMatrix>
-                                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_8375_690"></feBlend>
-                                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_8375_690" result="shape"></feBlend>
-                                </filter>
-                            </defs>
-                        </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 31 31" fill="none" class="corner first">
-                            <g filter="url(#filter0_d_8375_687)">
-                                <path d="M7 21V7H21" stroke="currentColor" stroke-width="1.5"></path>
-                            </g>
-                            <defs>
-                                <filter id="filter0_d_8375_687" x="0.25" y="0.25" width="30.75" height="30.75" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                                    <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
-                                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix>
-                                    <feOffset dx="2" dy="2"></feOffset>
-                                    <feGaussianBlur stdDeviation="4"></feGaussianBlur>
-                                    <feComposite in2="hardAlpha" operator="out"></feComposite>
-                                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0.458824 0 0 0 0 1 0 0 0 1 0"></feColorMatrix>
-                                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_8375_687"></feBlend>
-                                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_8375_687" result="shape"></feBlend>
-                                </filter>
-                            </defs>
-                        </svg>
-                    </div>
-                    <div role="listitem" class="case w-dyn-item">
-                        <a href="/projects/skylight" class="case-wrapper w-inline-block">
-                            <div class="case-img">
-                                <div class="case-element">
-                                    <div class="case-blur"></div>
-                                    <img src="https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66f286365bc1c2becf13c36e_Frame%201517%20(1)_11zon.webp" loading="eager" alt="Skylight" sizes="100vw" srcset="https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66f286365bc1c2becf13c36e_Frame%201517%20(1)_11zon-p-500.webp 500w, https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66f286365bc1c2becf13c36e_Frame%201517%20(1)_11zon-p-800.webp 800w, https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66f286365bc1c2becf13c36e_Frame%201517%20(1)_11zon-p-1080.webp 1080w, https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66f286365bc1c2becf13c36e_Frame%201517%20(1)_11zon-p-1600.webp 1600w, https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66f286365bc1c2becf13c36e_Frame%201517%20(1)_11zon-p-2000.webp 2000w, https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66f286365bc1c2becf13c36e_Frame%201517%20(1)_11zon.webp 2054w" class="case-embed"/>
-                                    <div class="w-condition-invisible">
-                                        <video loop="" muted="" autoplay="true" playsinline="true" crossorigin="anonymous" preload="metadata" class="case-embed">
-                                            <source src="" type="video/mp4"/>
-                                        </video>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="case-text">
-                                <div class="flex-sides">
-                                    <div class="additional-text">UI/UX, WOW Website, Visual Brand Identity</div>
-                                    <div class="additional-text case-year">2022</div>
-                                </div>
-                                <h3 class="p-large case-heading">Skylight</h3>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 31 31" fill="none" class="corner third">
-                                    <g filter="url(#filter0_d_8375_688)">
-                                        <path d="M7 6V20H21" stroke="currentColor" stroke-width="1.5"></path>
-                                    </g>
-                                    <defs>
-                                        <filter id="filter0_d_8375_688" x="0.25" y="0" width="30.75" height="30.75" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                                            <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
-                                            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix>
-                                            <feOffset dx="2" dy="2"></feOffset>
-                                            <feGaussianBlur stdDeviation="4"></feGaussianBlur>
-                                            <feComposite in2="hardAlpha" operator="out"></feComposite>
-                                            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0.458824 0 0 0 0 1 0 0 0 1 0"></feColorMatrix>
-                                            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_8375_688"></feBlend>
-                                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_8375_688" result="shape"></feBlend>
-                                        </filter>
-                                    </defs>
-                                </svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 31 31" fill="none" class="corner forth">
-                                    <g filter="url(#filter0_d_8375_691)">
-                                        <path d="M20 6V20H6" stroke="currentColor" stroke-width="1.5"></path>
-                                    </g>
-                                    <defs>
-                                        <filter id="filter0_d_8375_691" x="0" y="0" width="30.75" height="30.75" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                                            <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
-                                            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix>
-                                            <feOffset dx="2" dy="2"></feOffset>
-                                            <feGaussianBlur stdDeviation="4"></feGaussianBlur>
-                                            <feComposite in2="hardAlpha" operator="out"></feComposite>
-                                            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0.458824 0 0 0 0 1 0 0 0 1 0"></feColorMatrix>
-                                            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_8375_691"></feBlend>
-                                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_8375_691" result="shape"></feBlend>
-                                        </filter>
-                                    </defs>
-                                </svg>
-                            </div>
-                        </a>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 31 31" fill="none" class="corner second">
-                            <g filter="url(#filter0_d_8375_690)">
-                                <path d="M20 21V7H6" stroke="currentColor" stroke-width="1.5"></path>
-                            </g>
-                            <defs>
-                                <filter id="filter0_d_8375_690" x="0" y="0.25" width="30.75" height="30.75" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                                    <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
-                                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix>
-                                    <feOffset dx="2" dy="2"></feOffset>
-                                    <feGaussianBlur stdDeviation="4"></feGaussianBlur>
-                                    <feComposite in2="hardAlpha" operator="out"></feComposite>
-                                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0.458824 0 0 0 0 1 0 0 0 1 0"></feColorMatrix>
-                                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_8375_690"></feBlend>
-                                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_8375_690" result="shape"></feBlend>
-                                </filter>
-                            </defs>
-                        </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 31 31" fill="none" class="corner first">
-                            <g filter="url(#filter0_d_8375_687)">
-                                <path d="M7 21V7H21" stroke="currentColor" stroke-width="1.5"></path>
-                            </g>
-                            <defs>
-                                <filter id="filter0_d_8375_687" x="0.25" y="0.25" width="30.75" height="30.75" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                                    <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
-                                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix>
-                                    <feOffset dx="2" dy="2"></feOffset>
-                                    <feGaussianBlur stdDeviation="4"></feGaussianBlur>
-                                    <feComposite in2="hardAlpha" operator="out"></feComposite>
-                                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0.458824 0 0 0 0 1 0 0 0 1 0"></feColorMatrix>
-                                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_8375_687"></feBlend>
-                                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_8375_687" result="shape"></feBlend>
-                                </filter>
-                            </defs>
-                        </svg>
-                    </div>
-                    <div role="listitem" class="case w-dyn-item">
-                        <a href="/projects/zeuss" class="case-wrapper w-inline-block">
-                            <div class="case-img">
-                                <div class="case-element">
-                                    <div class="case-blur"></div>
-                                    <img src="https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66d192c1b86d9a286b7f0015_Zeuss_Cover_11zon.webp" loading="eager" alt="ZEUSS" sizes="100vw" srcset="https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66d192c1b86d9a286b7f0015_Zeuss_Cover_11zon-p-500.webp 500w, https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66d192c1b86d9a286b7f0015_Zeuss_Cover_11zon-p-800.webp 800w, https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66d192c1b86d9a286b7f0015_Zeuss_Cover_11zon-p-1080.webp 1080w, https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66d192c1b86d9a286b7f0015_Zeuss_Cover_11zon-p-1600.webp 1600w, https://cdn.prod.website-files.com/64354a08ff4dd191e639373a/66d192c1b86d9a286b7f0015_Zeuss_Cover_11zon.webp 1616w" class="case-embed"/>
-                                    <div class="w-condition-invisible">
-                                        <video loop="" muted="" autoplay="true" playsinline="true" crossorigin="anonymous" preload="metadata" class="case-embed">
-                                            <source src="" type="video/mp4"/>
-                                        </video>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="case-text">
-                                <div class="flex-sides">
-                                    <div class="additional-text">UI/UX, WOW Website, E-commerce &amp;Online Shops</div>
-                                    <div class="additional-text case-year">2021</div>
-                                </div>
-                                <h3 class="p-large case-heading">ZEUSS</h3>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 31 31" fill="none" class="corner third">
-                                    <g filter="url(#filter0_d_8375_688)">
-                                        <path d="M7 6V20H21" stroke="currentColor" stroke-width="1.5"></path>
-                                    </g>
-                                    <defs>
-                                        <filter id="filter0_d_8375_688" x="0.25" y="0" width="30.75" height="30.75" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                                            <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
-                                            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix>
-                                            <feOffset dx="2" dy="2"></feOffset>
-                                            <feGaussianBlur stdDeviation="4"></feGaussianBlur>
-                                            <feComposite in2="hardAlpha" operator="out"></feComposite>
-                                            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0.458824 0 0 0 0 1 0 0 0 1 0"></feColorMatrix>
-                                            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_8375_688"></feBlend>
-                                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_8375_688" result="shape"></feBlend>
-                                        </filter>
-                                    </defs>
-                                </svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 31 31" fill="none" class="corner forth">
-                                    <g filter="url(#filter0_d_8375_691)">
-                                        <path d="M20 6V20H6" stroke="currentColor" stroke-width="1.5"></path>
-                                    </g>
-                                    <defs>
-                                        <filter id="filter0_d_8375_691" x="0" y="0" width="30.75" height="30.75" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                                            <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
-                                            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix>
-                                            <feOffset dx="2" dy="2"></feOffset>
-                                            <feGaussianBlur stdDeviation="4"></feGaussianBlur>
-                                            <feComposite in2="hardAlpha" operator="out"></feComposite>
-                                            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0.458824 0 0 0 0 1 0 0 0 1 0"></feColorMatrix>
-                                            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_8375_691"></feBlend>
-                                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_8375_691" result="shape"></feBlend>
-                                        </filter>
-                                    </defs>
-                                </svg>
-                            </div>
-                        </a>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 31 31" fill="none" class="corner second">
-                            <g filter="url(#filter0_d_8375_690)">
-                                <path d="M20 21V7H6" stroke="currentColor" stroke-width="1.5"></path>
-                            </g>
-                            <defs>
-                                <filter id="filter0_d_8375_690" x="0" y="0.25" width="30.75" height="30.75" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                                    <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
-                                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix>
-                                    <feOffset dx="2" dy="2"></feOffset>
-                                    <feGaussianBlur stdDeviation="4"></feGaussianBlur>
-                                    <feComposite in2="hardAlpha" operator="out"></feComposite>
-                                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0.458824 0 0 0 0 1 0 0 0 1 0"></feColorMatrix>
-                                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_8375_690"></feBlend>
-                                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_8375_690" result="shape"></feBlend>
-                                </filter>
-                            </defs>
-                        </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 31 31" fill="none" class="corner first">
-                            <g filter="url(#filter0_d_8375_687)">
-                                <path d="M7 21V7H21" stroke="currentColor" stroke-width="1.5"></path>
-                            </g>
-                            <defs>
-                                <filter id="filter0_d_8375_687" x="0.25" y="0.25" width="30.75" height="30.75" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                                    <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
-                                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix>
-                                    <feOffset dx="2" dy="2"></feOffset>
-                                    <feGaussianBlur stdDeviation="4"></feGaussianBlur>
-                                    <feComposite in2="hardAlpha" operator="out"></feComposite>
-                                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0.458824 0 0 0 0 1 0 0 0 1 0"></feColorMatrix>
-                                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_8375_687"></feBlend>
-                                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_8375_687" result="shape"></feBlend>
-                                </filter>
-                            </defs>
-                        </svg>
-                    </div>
+                   
+            
+                  
+                    
                 </div>
             </div>
-            <div class="button_wrapper u--hide-desktop">
+            <!-- <div class="button_wrapper u--hide-desktop">
                 <a purpose="" href="/works" class="button w-inline-block">
                     <div class="button_flex">
                         <div class="button-text_wr">
@@ -2664,8 +2142,8 @@
                         </svg>
                     </div>
                 </a>
-            </div>
-            <div class="cases-track cc--absolute">
+            </div> -->
+            <!-- <div class="cases-track cc--absolute">
                 <div class="button-perspective">
                     <a purpose="" href="/works" class="button-halo w-inline-block">
                         <div class="button-halo-inner"></div>
@@ -2673,7 +2151,7 @@
                         <div class="button-halo_bg"></div>
                     </a>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>
@@ -2681,12 +2159,12 @@
         
                 
 
-                <section class="video-section" style="padding: 60px 0; background-color: #ffffff; font-weight: bold; text-align: center; font-family: 'Gore Regular', sans-serif;">
+                <!-- <section class="video-section" style="padding: 60px 0; background-color: #ffffff; font-weight: bold; text-align: center; font-family: 'Gore Regular', sans-serif;">
                     <h2 style="color: #000000; font-size: 2.5rem; margin-bottom: 20px;">Customer Experiences <br>(CX) from scratch</h2>
                     <div class="images" style="max-width: 1000px; margin: 0 auto; overflow: hidden; ">
                         <img src="assets/images/5d0d.gif" alt="Customer Experiences GIF" style="width: 100%; height: auto; display: block;">
                     </div>
-                </section>
+                </section> -->
 
                 <style>
                     @keyframes image-reveal {
@@ -2737,15 +2215,13 @@
 
                 <section class="ticker">
                     <div class="ticker-wrap">
-                        <span class="ticker__item">Let's </span>
+                        <span class="ticker__item">Let’s Talk! </span>
                         <span class="ticker__item">*</span>
                         <span class="ticker__item">Every Great Partnership Starts with a Great Conversation.</span>
                         <span class="ticker__item">*</span>
-                        <span class="ticker__item">New Project Idea?</span>
+                        <span class="ticker__item">Let’s brainstorm over coffee, tea, or even hot chocolate—we are flexible.</span>
                         <span class="ticker__item">*</span>
-                        <span class="ticker__item">Got Questions?</span>
-                        <span class="ticker__item">*</span>
-                        <span class="ticker__item">Need Branding?</span>
+                        <span class="ticker__item">Drop us a line today!</span>
                        
                     </div>
                     
@@ -3132,6 +2608,82 @@ https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/loaders/DRACOLoader.js
 	// ]]>
 </script>
         <div<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<!-- Code injected by live-server -->
 <script>
 	// <![CDATA[  <-- For SVG support
 	if ('WebSocket' in window) {
