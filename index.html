@@ -328,9 +328,118 @@
                           <a href="#" class="logo">
                               <img src="assets/images/logo.png" alt="Logo" class="img-fluid">
                           </a>
-                          <div class="menu-icon">
-                              <img src="assets/images/menu botton.png" alt="Menu Button" class="img-fluid">
+                          <div class="menu-icon" id="menu-icon" style="position: relative;">
+                              <img src="assets/images/menu-1.svg" alt="Menu Button" class="img-fluid menu-default">
+                              <img src="assets/images/menu-2.svg" alt="Menu Button" class="img-fluid menu-hover">
                           </div>
+                          <div id="full-screen-menu">
+                              <button id="close-menu" style="position:absolute; top:20px; right:20px; font-size:3rem; background:none; border:none; color:#C1FF72; cursor:pointer;">&times;</button>
+                              <ul>
+                                  <li><a href="#">home</a></li>
+                                  <li><a href="#">archives</a></li>
+                                  <li><a href="#">tags</a></li>
+                                  <li><a href="#">categories</a></li>
+                                  <li><a href="#">about</a></li>
+                              </ul>
+                          </div>
+                          <style>
+                            @import url("https://fonts.googleapis.com/css?family=Raleway:400,400i,700");
+
+                            /* Smooth fade transition for hover images */
+                            .menu-icon {
+                                position: relative;
+                            }
+                            .menu-icon img {
+                                transition: opacity 0.5s ease;
+                            }
+                            .menu-icon .menu-hover {
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                opacity: 0;
+                            }
+                            .menu-icon:hover .menu-hover {
+                                opacity: 1;
+                            }
+                            .menu-icon:hover .menu-default {
+                                opacity: 0;
+                            }
+
+                            /* Full screen menu with fade and slide up animation */
+                            #full-screen-menu {
+                                position: fixed;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                background: #000000;
+                                display: none;
+                                justify-content: center;
+                                align-items: center;
+                                z-index: 10000;
+                                opacity: 0;
+                                animation-fill-mode: forwards;
+                            }
+                            @keyframes fadeSlideUp {
+                                0% {
+                                    opacity: 0;
+                                    transform: translateY(50px);
+                                }
+                                100% {
+                                    opacity: 1;
+                                    transform: translateY(0);
+                                }
+                            }
+                            #full-screen-menu.active {
+                                animation: fadeSlideUp 0.5s ease forwards;
+                            }
+                            #full-screen-menu ul {
+                                display: flex;
+                                flex-direction: column;
+                                align-items: flex-start;
+                                list-style-type: none;
+                                padding: 0;
+                                margin: 0;
+                            }
+                            #full-screen-menu ul li {
+                                padding: 6px 0;
+                            }
+                            #full-screen-menu ul li a {
+                                --fill-color: #C1FF72;
+                                position: relative;
+                                display: block;
+                                padding: 4px 0;
+                                font: 700 4rem Raleway, sans-serif;
+                                text-decoration: none;
+                                text-transform: uppercase;
+                                -webkit-text-stroke: 2px var(--fill-color);
+                                background: linear-gradient(var(--fill-color) 0 100%) left / 0 no-repeat;
+                                color: transparent;
+                                background-clip: text;
+                                transition: background-size 0.5s linear;
+                            }
+                            #full-screen-menu ul li a:hover {
+                                background-size: 100%;
+                            }
+                          </style>
+                          <script>
+                            const menuIcon = document.getElementById('menu-icon');
+                            const fullScreenMenu = document.getElementById('full-screen-menu');
+                            const closeMenu = document.getElementById('close-menu');
+
+                            menuIcon.addEventListener('click', function() {
+                                fullScreenMenu.style.display = 'flex';
+                                // Force reflow for animation to trigger then add active class
+                                void fullScreenMenu.offsetWidth;
+                                fullScreenMenu.classList.add('active');
+                            });
+                            closeMenu.addEventListener('click', function() {
+                                fullScreenMenu.classList.remove('active');
+                                setTimeout(function() {
+                                    fullScreenMenu.style.display = 'none';
+                                }, 500);
+                            });
+                          </script>
                       </header>
                       <!-- Hero Section --> 
      <section class="hero d-flex flex-column align-items-center justify-content-center text-center text-white vh-100" style="background-color: black; position: sticky; position: -webkit-sticky; top: 0; z-index: -1;">
@@ -2608,6 +2717,44 @@ https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/loaders/DRACOLoader.js
 	// ]]>
 </script>
         <div<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<!-- Code injected by live-server -->
 <script>
 	// <![CDATA[  <-- For SVG support
 	if ('WebSocket' in window) {
