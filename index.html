@@ -446,95 +446,20 @@
                     
     
                       </style>    
-                    <!-- <div class="cta-wrapper">
-                        <a href="#" class="cta-button">Let's Talk</a>
-                        <div class="outline"></div>
-                    </div>
+                   
 
                     <style>
-                        .outline {
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        right: -2px;
-                        bottom: -2px;
-                        border-right: 1px solid white;
-                        border-bottom: 1px solid white;
-                        pointer-events: none;
+                        @keyframes mergeAnimation {
+                            0% { transform: translate(0,0); }
+                            50% { transform: translate(5px, 5px); }
+                            100% { transform: translate(0,0); }
                         }
-                        .cta-wrapper a.cta-button {
-                            position: fixed;
-                            bottom: 20px;
-                            right: 20px;
-                            z-index: 1000;
-                            padding: 15px 30px;
-                            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-                            background-color: black;
-                            border: 2px solid #fff;
-                            box-sizing: border-box;
-                            
+                        @keyframes buttonMergeAnim {
+                            0% { transform: scale(1); }
+                            50% { transform: scale(0.98); }
+                            100% { transform: scale(1); }
                         }
-                        .cta-wrapper a.cta-button:hover {
-                            background-color: #fff;
-                            color: black;
-                        }
-                        .cta-button {
-                              display: inline-block;
-                              color: white;
-                              background-color: transparent;
-                              border: 2px solid white;
-                              padding: 12px 30px;
-                              font-size: 18px;
-                              text-transform: uppercase;
-                              letter-spacing: 1px;
-                              cursor: pointer;
-                              margin-top: 60px;
-                              margin-left: auto;
-                              transition: all 0.3s;
-                              text-decoration: none;
-                              font-family: 'Anton', sans-serif;
-                              position: relative;
-                              overflow: hidden;
-                              border-radius: 0;
-                          }
-        
-                          .cta-button:hover {
-                              background-color: white;
-                              color: black;
-                          }
-        
-                          .cta-button::before,
-                          .cta-button::after {
-                              content: '';
-                              position: absolute;
-                              top: 0;
-                              width: 50%;
-                              height: 100%;
-                              background-color: white;
-                              transition: all 0.3s;
-                              z-index: -1;
-                              border-radius: 0;
-                          }
-        
-                          .cta-button::before {
-                              left: -50%;
-                          }
-        
-                          .cta-button::after {
-                              right: -50%;
-                          }
-        
-                          .cta-button:hover::before {
-                              left: 0;
-                          }
-        
-                          .cta-button:hover::after {
-                              right: 0;
-                          }
-                    </style> -->
 
-
-                    <style>
                         .button-container {
                             position: fixed;
                             bottom: 20px;
@@ -598,8 +523,8 @@
                         /* Outline styles */
                         .outline {
                             position: absolute;
-                            top: 0;
-                            left: 0;
+                            top: 3px;
+                            left: 5px;
                             right: -8px; /* increased from -4px */
                             bottom: -8px; /* increased from -4px */
                             border-right: 1px solid white;
@@ -607,12 +532,22 @@
                             pointer-events: none;
                             border-radius: 0;
                             transition: all 0.3s ease;
+                            width: 165px;
+                            height: 65px;
                         }
 
                         /* When the container has the 'merged' class */
                         .merged .outline {
                             right: 0;
                             bottom: 0;
+                        }
+
+                        /* Hover animation on container: merge both button and outline */
+                        .button-container:hover .outline {
+                            animation: mergeAnimation 0.5s ease-in-out;
+                        }
+                        .button-container:hover .button {
+                            animation: buttonMergeAnim 0.5s ease-in-out;
                         }
 
                         /* Responsive adjustments */
@@ -653,17 +588,6 @@
                         <a href="#" class="button b26" id="mergeButton">Let's Talk</a>
                         <div class="outline"></div>
                     </div>
-
-                    <script>
-                        // Instead of merging on click, merge on mouse hovering (mouse enter/leave)
-                        const buttonContainer = document.getElementById('buttonContainer');
-                        buttonContainer.addEventListener('mouseenter', function() {
-                            this.classList.add('merged');
-                        });
-                        buttonContainer.addEventListener('mouseleave', function() {
-                            this.classList.remove('merged');
-                        });
-                    </script>
 
           <section id="About" class="design-philosophy bg-light text-dark py-5" style="background: url('assets/images/Group 1410136454.png') no-repeat center center; background-size: cover; height: auto; min-height: 100vh;">
               <div class="container">
@@ -2905,6 +2829,44 @@ https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/loaders/DRACOLoader.js
 	// ]]>
 </script>
         <div<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<!-- Code injected by live-server -->
 <script>
 	// <![CDATA[  <-- For SVG support
 	if ('WebSocket' in window) {
