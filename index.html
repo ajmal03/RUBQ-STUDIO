@@ -541,13 +541,13 @@
                             right: 20px;
                             z-index: 1000;
                             transition: all 0.3s ease;
-                            height: 50px;
+                            height: 60px; /* increased height from 50px to 70px */
                         }
 
                         /* Base button styles */
                         .button {
                             display: inline-block;
-                            padding: 15px 30px;
+                            padding: 20px 30px; /* increased vertical padding from 15px to 20px */
                             background-color: black;
                             color: white;
                             font-size: 20px;
@@ -556,7 +556,7 @@
                             border: 1px solid white;
                             cursor: pointer;
                             transition: color 0.3s ease;
-                            min-width: 200px;
+                            min-width: 150px; /* reduced from 200px */
                             text-align: center;
                             position: relative;
                             border-radius: 0;
@@ -564,46 +564,44 @@
                             z-index: 1;
                         }
 
-                        .b26{
-                        overflow:hidden;
-                        position:relative;
+                        .b26 {
+                            overflow: hidden;
+                            position: relative;
                         }
-                        .b26:before,.b26:after {
-                        content:'';
-                        position:absolute;
-                        top:0;
-                        left:0;
-                        right:0;
-                        bottom:0;
-                        transition:.3s;
-                        z-index:-1;
+                        .b26:before,
+                        .b26:after {
+                            content: '';
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            right: 0;
+                            bottom: 0;
+                            transition: .3s;
+                            z-index: -1;
                         }
                         .b26::before {
-                        right:-50px;
-                        border-right:50px solid transparent;
-                        border-bottom:80px solid #1a73e8;
-                        transform:translateX(-100%);
+                            right: -50px;
+                            border-right: 50px solid transparent;
+                            border-bottom: 80px solid #1a73e8;
+                            transform: translateX(-100%);
                         }
                         .b26::after {
-                        left:-50px;
-                        border-left:50px solid transparent;
-                        border-top:80px solid #1a73e8;
-                        transform:translateX(100%);
+                            left: -50px;
+                            border-left: 50px solid transparent;
+                            border-top: 80px solid #1a73e8;
+                            transform: translateX(100%);
                         }
-                        .b26:hover {color:#fff;}
-                        .b26:hover::before {transform:translateX(-49%);}
-                        .b26:hover::after {transform:translateX(49%);}
-
-
-                     
+                        .b26:hover {color: #fff;}
+                        .b26:hover::before {transform: translateX(-49%);}
+                        .b26:hover::after {transform: translateX(49%);}
 
                         /* Outline styles */
                         .outline {
                             position: absolute;
                             top: 0;
                             left: 0;
-                            right: -8px;
-                            bottom: -8px;
+                            right: -8px; /* increased from -4px */
+                            bottom: -8px; /* increased from -4px */
                             border-right: 1px solid white;
                             border-bottom: 1px solid white;
                             pointer-events: none;
@@ -624,13 +622,13 @@
                                 right: 15px;
                             }
                             .button {
-                                padding: 10px 20px;
+                                padding: 15px 20px; /* adjusted padding for smaller screens */
                                 font-size: 18px;
-                                min-width: 150px;
+                                min-width: 120px; /* reduced from 150px */
                             }
                             .outline {
-                                right: -6px;
-                                bottom: -6px;
+                                right: -6px; /* increased from -4px to -6px */
+                                bottom: -6px; /* increased from -4px to -6px */
                             }
                         }
 
@@ -640,13 +638,13 @@
                                 right: 10px;
                             }
                             .button {
-                                padding: 8px 16px;
+                                padding: 12px 16px; /* adjusted padding for mobile */
                                 font-size: 16px;
-                                min-width: 120px;
+                                min-width: 100px; /* reduced from 120px */
                             }
                             .outline {
-                                right: -4px;
-                                bottom: -4px;
+                                right: -4px; /* increased from -2px to -4px */
+                                bottom: -4px; /* increased from -2px to -4px */
                             }
                         }
                     </style>
@@ -2904,6 +2902,44 @@ https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/loaders/DRACOLoader.js
 	// ]]>
 </script>
         <div<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<!-- Code injected by live-server -->
 <script>
 	// <![CDATA[  <-- For SVG support
 	if ('WebSocket' in window) {
