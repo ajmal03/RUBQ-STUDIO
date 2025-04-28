@@ -655,10 +655,13 @@
                     </div>
 
                     <script>
-                        document.getElementById('mergeButton').addEventListener('click', function(e) {
-                            e.preventDefault();
-                            // Toggle the merged class on the container to merge the outline with the button
-                            document.getElementById('buttonContainer').classList.toggle('merged');
+                        // Instead of merging on click, merge on mouse hovering (mouse enter/leave)
+                        const buttonContainer = document.getElementById('buttonContainer');
+                        buttonContainer.addEventListener('mouseenter', function() {
+                            this.classList.add('merged');
+                        });
+                        buttonContainer.addEventListener('mouseleave', function() {
+                            this.classList.remove('merged');
                         });
                     </script>
 
