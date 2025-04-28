@@ -191,59 +191,7 @@
                               height: 40px;
                           }
         
-                          .cta-button {
-                              display: inline-block;
-                              color: white;
-                              background-color: transparent;
-                              border: 2px solid white;
-                              padding: 12px 30px;
-                              font-size: 18px;
-                              text-transform: uppercase;
-                              letter-spacing: 1px;
-                              cursor: pointer;
-                              margin-top: 60px;
-                              margin-left: auto;
-                              transition: all 0.3s;
-                              text-decoration: none;
-                              font-family: 'Anton', sans-serif;
-                              position: relative;
-                              overflow: hidden;
-                              border-radius: 0;
-                          }
-        
-                          .cta-button:hover {
-                              background-color: white;
-                              color: black;
-                          }
-        
-                          .cta-button::before,
-                          .cta-button::after {
-                              content: '';
-                              position: absolute;
-                              top: 0;
-                              width: 50%;
-                              height: 100%;
-                              background-color: white;
-                              transition: all 0.3s;
-                              z-index: -1;
-                              border-radius: 0;
-                          }
-        
-                          .cta-button::before {
-                              left: -50%;
-                          }
-        
-                          .cta-button::after {
-                              right: -50%;
-                          }
-        
-                          .cta-button:hover::before {
-                              left: 0;
-                          }
-        
-                          .cta-button:hover::after {
-                              right: 0;
-                          }
+                         
 
                           @media (max-width: 768px) {
                             .hero-title {
@@ -272,10 +220,7 @@
                                 left: 380px;
                               }
 
-                              .cta-button {
-                                  padding: 8px 16px;
-                                  font-size: 14px;
-                              }
+                           
                              
                               }
                           
@@ -308,11 +253,6 @@
                                 left: 380px;
                               }
 
-                              .cta-button {
-                                  padding: 8px 16px;
-                                  font-size: 14px;
-                              }
-                             
                               }
                           
                       </style>
@@ -336,11 +276,11 @@
                               <button id="close-menu" style="position:absolute; top:20px; right:20px; font-size:3rem; background:none; border:none; color:#C1FF72; cursor:pointer;">&times;</button>
                               <ul>
                                   <li><a href="#">home</a></li>
-                                  <li><a href="#">About</a></li>
-                                  <li><a href="#">Services</a></li>
-                                  <li><a href="#">Portfolio</a></li>
-                                  <li><a href="#">team</a></li>
-                                  <li><a href="#">contact us</a></li>
+                                  <li><a href="#About">About</a></li>
+                                  <li><a href="#Services">Services</a></li>
+                                  <li><a href="#Portfolio">Portfolio</a></li>
+                                  <li><a href="#Team">team</a></li>
+                                  <!-- <li><a href="#">contact us</a></li> -->
                               </ul>
                           </div>
                           <style>
@@ -434,11 +374,24 @@
                                 void fullScreenMenu.offsetWidth;
                                 fullScreenMenu.classList.add('active');
                             });
+
+                            // Close menu when close button is clicked
                             closeMenu.addEventListener('click', function() {
                                 fullScreenMenu.classList.remove('active');
                                 setTimeout(function() {
                                     fullScreenMenu.style.display = 'none';
                                 }, 500);
+                            });
+
+                            // Close menu when any navigation link is clicked
+                            const navLinks = fullScreenMenu.querySelectorAll('ul li a');
+                            navLinks.forEach(link => {
+                                link.addEventListener('click', function() {
+                                    fullScreenMenu.classList.remove('active');
+                                    setTimeout(function() {
+                                        fullScreenMenu.style.display = 'none';
+                                    }, 500);
+                                });
                             });
                           </script>
                       </header>
@@ -490,12 +443,228 @@
         
        
                       </section>
-                      <a href="#" class="cta-button btn btn-outline-light mt-4" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000; padding: 15px 30px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); background-color: black; border: 2px solid rgb(255, 255, 255);">Let's Talk</a>
+                    
     
                       </style>    
+                    <!-- <div class="cta-wrapper">
+                        <a href="#" class="cta-button">Let's Talk</a>
+                        <div class="outline"></div>
+                    </div>
+
+                    <style>
+                        .outline {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: -2px;
+                        bottom: -2px;
+                        border-right: 1px solid white;
+                        border-bottom: 1px solid white;
+                        pointer-events: none;
+                        }
+                        .cta-wrapper a.cta-button {
+                            position: fixed;
+                            bottom: 20px;
+                            right: 20px;
+                            z-index: 1000;
+                            padding: 15px 30px;
+                            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+                            background-color: black;
+                            border: 2px solid #fff;
+                            box-sizing: border-box;
                             
-                            <!-- Design Philosophy Section -->
-          <section class="design-philosophy bg-light text-dark py-5" style="background: url('assets/images/Group 1410136454.png') no-repeat center center; background-size: cover; height: auto; min-height: 100vh;">
+                        }
+                        .cta-wrapper a.cta-button:hover {
+                            background-color: #fff;
+                            color: black;
+                        }
+                        .cta-button {
+                              display: inline-block;
+                              color: white;
+                              background-color: transparent;
+                              border: 2px solid white;
+                              padding: 12px 30px;
+                              font-size: 18px;
+                              text-transform: uppercase;
+                              letter-spacing: 1px;
+                              cursor: pointer;
+                              margin-top: 60px;
+                              margin-left: auto;
+                              transition: all 0.3s;
+                              text-decoration: none;
+                              font-family: 'Anton', sans-serif;
+                              position: relative;
+                              overflow: hidden;
+                              border-radius: 0;
+                          }
+        
+                          .cta-button:hover {
+                              background-color: white;
+                              color: black;
+                          }
+        
+                          .cta-button::before,
+                          .cta-button::after {
+                              content: '';
+                              position: absolute;
+                              top: 0;
+                              width: 50%;
+                              height: 100%;
+                              background-color: white;
+                              transition: all 0.3s;
+                              z-index: -1;
+                              border-radius: 0;
+                          }
+        
+                          .cta-button::before {
+                              left: -50%;
+                          }
+        
+                          .cta-button::after {
+                              right: -50%;
+                          }
+        
+                          .cta-button:hover::before {
+                              left: 0;
+                          }
+        
+                          .cta-button:hover::after {
+                              right: 0;
+                          }
+                    </style> -->
+
+
+                    <style>
+                        .button-container {
+                            position: fixed;
+                            bottom: 20px;
+                            right: 20px;
+                            z-index: 1000;
+                            transition: all 0.3s ease;
+                            height: 50px;
+                        }
+
+                        /* Base button styles */
+                        .button {
+                            display: inline-block;
+                            padding: 15px 30px;
+                            background-color: black;
+                            color: white;
+                            font-size: 20px;
+                            font-weight: 500;
+                            text-decoration: none;
+                            border: 1px solid white;
+                            cursor: pointer;
+                            transition: color 0.3s ease;
+                            min-width: 200px;
+                            text-align: center;
+                            position: relative;
+                            border-radius: 0;
+                            overflow: hidden;
+                            z-index: 1;
+                        }
+
+                        .b26{
+                        overflow:hidden;
+                        position:relative;
+                        }
+                        .b26:before,.b26:after {
+                        content:'';
+                        position:absolute;
+                        top:0;
+                        left:0;
+                        right:0;
+                        bottom:0;
+                        transition:.3s;
+                        z-index:-1;
+                        }
+                        .b26::before {
+                        right:-50px;
+                        border-right:50px solid transparent;
+                        border-bottom:80px solid #1a73e8;
+                        transform:translateX(-100%);
+                        }
+                        .b26::after {
+                        left:-50px;
+                        border-left:50px solid transparent;
+                        border-top:80px solid #1a73e8;
+                        transform:translateX(100%);
+                        }
+                        .b26:hover {color:#fff;}
+                        .b26:hover::before {transform:translateX(-49%);}
+                        .b26:hover::after {transform:translateX(49%);}
+
+
+                     
+
+                        /* Outline styles */
+                        .outline {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            right: -8px;
+                            bottom: -8px;
+                            border-right: 1px solid white;
+                            border-bottom: 1px solid white;
+                            pointer-events: none;
+                            border-radius: 0;
+                            transition: all 0.3s ease;
+                        }
+
+                        /* When the container has the 'merged' class */
+                        .merged .outline {
+                            right: 0;
+                            bottom: 0;
+                        }
+
+                        /* Responsive adjustments */
+                        @media screen and (max-width: 768px) {
+                            .button-container {
+                                bottom: 15px;
+                                right: 15px;
+                            }
+                            .button {
+                                padding: 10px 20px;
+                                font-size: 18px;
+                                min-width: 150px;
+                            }
+                            .outline {
+                                right: -6px;
+                                bottom: -6px;
+                            }
+                        }
+
+                        @media screen and (max-width: 480px) {
+                            .button-container {
+                                bottom: 10px;
+                                right: 10px;
+                            }
+                            .button {
+                                padding: 8px 16px;
+                                font-size: 16px;
+                                min-width: 120px;
+                            }
+                            .outline {
+                                right: -4px;
+                                bottom: -4px;
+                            }
+                        }
+                    </style>
+
+                    <div class="button-container" id="buttonContainer">
+                        <a href="#" class="button b26" id="mergeButton">Let's Talk</a>
+                        <div class="outline"></div>
+                    </div>
+
+                    <script>
+                        document.getElementById('mergeButton').addEventListener('click', function(e) {
+                            e.preventDefault();
+                            // Toggle the merged class on the container to merge the outline with the button
+                            document.getElementById('buttonContainer').classList.toggle('merged');
+                        });
+                    </script>
+
+          <section id="About" class="design-philosophy bg-light text-dark py-5" style="background: url('assets/images/Group 1410136454.png') no-repeat center center; background-size: cover; height: auto; min-height: 100vh;">
               <div class="container">
                 <div class="content text-center">
                     <div class="brand-statement">
@@ -673,7 +842,7 @@
     <!-- Services Section -->    
     
     
-    <section class="services">
+    <section id="Services" class="services">
         <div class="services-container">
             <div class="services-header">
                 <div class="logo-container">
@@ -997,6 +1166,11 @@
             }
         }
     </style>
+
+
+
+
+
 <!-- Comparison Section -->
  
 <section class="comparison-section">
@@ -1011,8 +1185,8 @@
         <div class="icon-plus">+</div>
         
         <div class="img-comparison">
-            <img class="img img-before" src="assets/images/new-ui-mob1- (1).jpg" alt="Leopard black and white">
-            <img class="img img-after" src="assets/images/new-ui-mob2- (1).jpg" alt="Leopard color">
+            <img class="img img-before" src="assets/images/new-ui1-.jpg" alt="Leopard black and white">
+            <img class="img img-after" src="assets/images/new-ui2.-.jpg" alt="Leopard color">
             
             <div class="img-slider">
                 <div class="slider-btn"></div>
@@ -1021,248 +1195,260 @@
     </div>
 
     <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        const container = document.querySelector('.img-comparison');
-        const slider = document.querySelector('.img-slider');
-        const beforeImage = document.querySelector('.img-before');
-        
-        let position = 50;
-        updatePosition(position);
-        
-        let isDragging = false;
-        
-        slider.addEventListener('mousedown', startDrag);
-        slider.addEventListener('touchstart', startDrag, { passive: true });
-        
-        document.addEventListener('mousemove', drag);
-        document.addEventListener('touchmove', drag, { passive: false });
-        
-        document.addEventListener('mouseup', endDrag);
-        document.addEventListener('touchend', endDrag);
-        
-        function startDrag() {
-          isDragging = true;
-        }
-        
-        function drag(e) {
-          if (!isDragging) return;
-          e.preventDefault();
-          const containerRect = container.getBoundingClientRect();
-          let clientX;
-          if (e.type === 'touchmove') {
-            clientX = e.touches[0].clientX;
-          } else {
-            clientX = e.clientX;
-          }
-          position = ((clientX - containerRect.left) / containerRect.width) * 100;
-          position = Math.max(0, Math.min(100, position));
-          updatePosition(position);
-        }
-        
-        function endDrag() {
-          isDragging = false;
-        }
-        
-        function updatePosition(pos) {
-          document.documentElement.style.setProperty('--position', `${pos}%`);
-        }
-      });
+        document.addEventListener('DOMContentLoaded', function () {
+            const container = document.querySelector('.img-comparison');
+            const slider = document.querySelector('.img-slider');
+            const beforeImage = document.querySelector('.img-before');
+            
+            let position = 50;
+            updatePosition(position);
+            
+            let isDragging = false;
+            
+            slider.addEventListener('mousedown', startDrag);
+            slider.addEventListener('touchstart', startDrag, { passive: true });
+            
+            document.addEventListener('mousemove', drag);
+            document.addEventListener('touchmove', drag, { passive: false });
+            
+            document.addEventListener('mouseup', endDrag);
+            document.addEventListener('touchend', endDrag);
+            
+            function startDrag() {
+                isDragging = true;
+            }
+            
+            function drag(e) {
+                if (!isDragging) return;
+                e.preventDefault();
+                const containerRect = container.getBoundingClientRect();
+                let clientX = e.type.startsWith('touch') ? e.touches[0].clientX : e.clientX;
+                position = ((clientX - containerRect.left) / containerRect.width) * 100;
+                position = Math.max(0, Math.min(100, position));
+                updatePosition(position);
+            }
+            
+            function endDrag() {
+                isDragging = false;
+            }
+            
+            function updatePosition(pos) {
+                document.documentElement.style.setProperty('--position', `${pos}%`);
+            }
+        });
     </script>
-  
+
     <style>
-      .comparison-section {
-        background-color: #000;
-        color: #fff;
-        font-family: Arial, sans-serif;
-        min-height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        padding: 60px 20px;
-      }
-      
-      .bg-pattern {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        opacity: 0.1;
-        z-index: 0;
-      }
-      
-      .bg-pattern::before {
-        content: '';
-        position: absolute;
-        bottom: 10%;
-        left: 10%;
-        width: 20%;
-        height: 25%;
-        background: linear-gradient(45deg, #333 25%, transparent 25%),
-                    linear-gradient(-45deg, #333 25%, transparent 25%),
-                    linear-gradient(45deg, transparent 75%, #333 75%),
-                    linear-gradient(-45deg, transparent 75%, #333 75%);
-        background-size: 40px 40px;
-        transform: rotate(-15deg);
-      }
-      
-      .content-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        max-width: 1200px;
-        z-index: 1;
-      }
-      
-      .heading-row {
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-        margin-bottom: 20px;
-        padding: 0 20px;
-      }
-      
-      .heading {
-        font-size: 2.5rem;
-        font-weight: bold;
-        text-transform: uppercase;
-        position: relative;
-      }
-      
-      .heading::after {
-        content: '';
-        position: absolute;
-        bottom: -10px;
-        left: 0;
-        width: 100%;
-        height: 2px;
-        background-color: #fff;
-      }
-      
-      .icon-plus {
-        font-size: 2.5rem;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -80%);
-      }
-      
-      .img-comparison {
-        position: relative;
-        width: 100%;
-        max-width: 800px;
-        height: 600px;
-        overflow: hidden;
-        border-radius: 5px;
-        box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
-      }
-      
-      .img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        pointer-events: none;
-      }
-      
-      .img-before {
-        clip-path: polygon(0 0, var(--position) 0, var(--position) 100%, 0 100%);
-        z-index: 2;
-      }
-      
-      .img-slider {
-        position: absolute;
-        top: 0;
-        left: var(--position);
-        width: 2px;
-        height: 100%;
-        background-color: #fff;
-        cursor: ew-resize;
-        transform: translateX(-1px);
-        z-index: 3;
-      }
-        
-      .slider-btn {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 40px;
-        height: 40px;
-        background: linear-gradient(45deg, #fff, #ddd);
-        border: 3px solid #000;
-        border-radius: 50%;
-        transform: translate(-50%, -50%);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        cursor: ew-resize;
-      }
-      
-      .slider-btn::before {
-        content: '⇔';
-        font-size: 18px;
-        color: #000;
-      }
-
-      @media (max-width: 768px) {
-        .heading {
-          font-size: 1.8rem;
-        }
-        
-        .icon-plus {
-          font-size: 2rem;
-        }
-        
-        .img-comparison {
-          height: 400px;
-        }
-        
-        .slider-btn {
-          width: 30px;
-          height: 30px;
-        }
-        
-        .slider-btn::before {
-          font-size: 14px;
-        }
-      }
-
-      @media (max-width: 480px) {
         .comparison-section {
-          padding: 40px 10px;
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            padding: 60px 20px;
         }
         
-        .heading {
-          font-size: 1.2rem;
+        .bg-pattern {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .bg-pattern::before {
+            content: '';
+            position: absolute;
+            bottom: 10%;
+            left: 10%;
+            width: 20%;
+            height: 25%;
+            background: linear-gradient(45deg, #333 25%, transparent 25%),
+                                    linear-gradient(-45deg, #333 25%, transparent 25%),
+                                    linear-gradient(45deg, transparent 75%, #333 75%),
+                                    linear-gradient(-45deg, transparent 75%, #333 75%);
+            background-size: 40px 40px;
+            transform: rotate(-15deg);
+        }
+        
+        .content-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 90%;
+            max-width: 1200px;
+            z-index: 1;
+            margin: 0 auto;
         }
         
         .heading-row {
-          padding: 0 10px;
-          margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 20px;
+            padding: 0 20px;
+            flex-wrap: wrap;
+        }
+        
+        .heading {
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            position: relative;
+            flex: 1 1 45%;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        
+        .heading::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            width: 50%;
+            height: 2px;
+            background-color: #fff;
+            transform: translateX(-50%);
         }
         
         .icon-plus {
-          font-size: 1.5rem;
+            font-size: 2.5rem;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -80%);
         }
         
         .img-comparison {
-          height: 300px;
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            aspect-ratio: 4 / 3;
+            overflow: hidden;
+            border-radius: 5px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
         }
         
+        .img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            pointer-events: none;
+        }
+        
+        .img-before {
+            clip-path: polygon(0 0, var(--position) 0, var(--position) 100%, 0 100%);
+            z-index: 2;
+        }
+        
+        .img-slider {
+            position: absolute;
+            top: 0;
+            left: var(--position);
+            width: 2px;
+            height: 100%;
+            background-color: #fff;
+            cursor: ew-resize;
+            transform: translateX(-1px);
+            z-index: 3;
+        }
+            
         .slider-btn {
-          width: 25px;
-          height: 25px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(45deg, #fff, #ddd);
+            border: 3px solid #000;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            cursor: ew-resize;
         }
         
         .slider-btn::before {
-          font-size: 12px;
+            content: "⇔";
+            font-size: 18px;
+            color: #000;
         }
-      }
+        
+        /* Responsive Styles */
+        @media (max-width: 1024px) {
+            .heading {
+                font-size: 2rem;
+            }
+            .icon-plus {
+                font-size: 2rem;
+            }
+            .slider-btn {
+                width: 35px;
+                height: 35px;
+            }
+            .slider-btn::before {
+                font-size: 16px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .comparison-section {
+                padding: 40px 20px;
+            }
+            .heading {
+                font-size: 1.8rem;
+            }
+            .icon-plus {
+                font-size: 2rem;
+            }
+            .img-comparison {
+                max-width: 100%;
+                aspect-ratio: 16 / 9;
+            }
+            .slider-btn {
+                width: 30px;
+                height: 30px;
+            }
+            .slider-btn::before {
+                font-size: 14px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .comparison-section {
+                padding: 20px 10px;
+            }
+            .heading {
+                font-size: 1.2rem;
+            }
+            .heading-row {
+                padding: 0 10px;
+            }
+            .icon-plus {
+                font-size: 1.5rem;
+            }
+            .img-comparison {
+                aspect-ratio: 16 / 9;
+            }
+            .slider-btn {
+                width: 25px;
+                height: 25px;
+            }
+            .slider-btn::before {
+                font-size: 12px;
+            }
+        }
     </style>
 </section>
 <style>
@@ -1596,7 +1782,7 @@
     }
   </style>
 
-  <div class="crafts-container">
+  <div id="Portfolio" class="crafts-container">
     <div class="crafts-header">
       <div class="peek-character">
         <img src="assets/images/Rectangle (2).png" alt="Character" class="character-image">
@@ -2293,7 +2479,7 @@
                         animation-timeline: view();
                     }
                 </style>
-                                  <section class="image-section">
+                                  <section id="Team" class="image-section">
                                       <div class="container">
                                           <img src="assets/images/Groups.png" alt="Groups Image">
                                       </div>
@@ -2718,6 +2904,44 @@ https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/loaders/DRACOLoader.js
 	// ]]>
 </script>
         <div<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<!-- Code injected by live-server -->
 <script>
 	// <![CDATA[  <-- For SVG support
 	if ('WebSocket' in window) {
